@@ -1,0 +1,12 @@
+﻿body {font-family:Verdana; background-color:#444; color: white;}
+header {margin: auto; width: 500px; text-align: center;}
+header h1 {font-size: 300%;}
+#editable {margin-left: 20px; padding: 5px; min-height:105px; display:block; border: 1px solid #555;font-family: arial,sans-serif;font-size: 20px;z-index:100;}
+#editable.hover {border: 1px solid #777; background:#666; ;}
+#editable .word {margin-right:5px;}
+#editable .with-select.hover {color:black;background:yellow;border-radius:2px;}
+#editable ul.variants {position:absolute; display:none;list-style: none;font-size: 14px;padding: 0px;margin: 0px; background: #767676;}
+#editable .variants li {padding-top:5px;}
+#editable .variants li.hover {text-decoration:underline; cursor:pointer;}
+#debug {font-family:"Courier New", Courier, monospace; font-size:12px; margin-left:20px;margin-top:10px}
+.changing {background:#333}

@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 11
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Totify.Web", "Totify.Web\Totify.Web.fsproj", "{075F9E86-124E-43C0-BDD2-EB41C47A3C2B}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "TinyNLP.fs", "..\tinynlp.fs\TinyNLP.fs.fsproj", "{514F5744-17B0-4726-8976-77491F11CC0A}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Totify.Filters", "Totify.Filters\Totify.Filters.fsproj", "{A7EB0A48-9CEF-4FC3-A6A0-6E49E2B979DD}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "TinyNLP.Samples", "..\tinynlp.fs\Samples\TinyNLP.Samples.fsproj", "{6847B6B2-ECAA-4A65-BF19-DBC70BF5F503}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{075F9E86-124E-43C0-BDD2-EB41C47A3C2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{075F9E86-124E-43C0-BDD2-EB41C47A3C2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{075F9E86-124E-43C0-BDD2-EB41C47A3C2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{075F9E86-124E-43C0-BDD2-EB41C47A3C2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{514F5744-17B0-4726-8976-77491F11CC0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{514F5744-17B0-4726-8976-77491F11CC0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{514F5744-17B0-4726-8976-77491F11CC0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{514F5744-17B0-4726-8976-77491F11CC0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6847B6B2-ECAA-4A65-BF19-DBC70BF5F503}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6847B6B2-ECAA-4A65-BF19-DBC70BF5F503}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6847B6B2-ECAA-4A65-BF19-DBC70BF5F503}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6847B6B2-ECAA-4A65-BF19-DBC70BF5F503}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7EB0A48-9CEF-4FC3-A6A0-6E49E2B979DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7EB0A48-9CEF-4FC3-A6A0-6E49E2B979DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7EB0A48-9CEF-4FC3-A6A0-6E49E2B979DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7EB0A48-9CEF-4FC3-A6A0-6E49E2B979DD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
