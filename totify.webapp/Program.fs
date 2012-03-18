@@ -3,11 +3,13 @@
 open System.Web.Script.Serialization
 open Mario.HttpContext
 open Mario.WebServer
+open Totify.Filters
 
 
 let processText t = 
-    let js = new JavaScriptSerializer()
-    js.Serialize(t)
+    let js = new JavaScriptSerializer()    
+    
+    js.Serialize(totify t)
 
 
 let myHandler (req:HttpRequest) : HttpResponse =
