@@ -12,7 +12,7 @@ let prepareText text =
 
 
 let synonymFilter tokensList = 
-    tokensList |> List.map (fun x -> { Token = x; Changes = [{ Variants = TinyNLP.Synonyms.getSynonyms(x.Content)} ]})
+    tokensList |> List.map (fun x -> { Token = x; Changes = [{ Variants = TinyNLP.Synonymizer.getSynonyms(TinyNLP.Stemming.Stem x.Content)} ]})
 
 
 let totify text =
