@@ -1,8 +1,10 @@
 ﻿
 markup={};
 markup.result = function() {
-  html='<span id="word' + this.tid + '" class="word with-select main">'+this.word+'</span>';
-  html+='<ul id="changes' + this.tid + '" class="variants"></ul>';
+  html='<span id="word' + this.Token.Id + '" class="word with-select main">'+this.Token.Content +'</span>';
+ // html='<div class="bubble"><div class="pointer"><div class="one"></div><div class="two"></div></div><div class="content">';
+  html+='<ul id="changes' + this.Token.Id + '" class="variants"></ul>';
+ // html+='</div></div>';
   return html;
 }
 
@@ -10,7 +12,8 @@ $(document).ready(function () {
 		
 		GetLastDraft();
 		EnableHovers();
-		
+		setCaret(0);
+
 		$('#editable').live('mousedown focus', function() {
 		   $('#editable').addClass('changing');
 		}).live('blur', function() {
@@ -20,21 +23,40 @@ $(document).ready(function () {
 		}).live('click', function () {//HideVariants();
 		}).live('keyup paste',function (eventData) {
 			 HideVariants();
-			 log('keyCode pressed ' + eventData.keyCode);
-			 log('caret position ' +  getCaret());
+			 //log('keyCode pressed ' + eventData.keyCode);
+			 //log('caret position ' +  getCaret());
 			 var isNewWordTyped = eventData.keyCode == 32; // temporary if only space pressed
 			 if (isNewWordTyped) {	
 			 	 log('new word detected');
-			 	 $.post('/totify.fs', {text:"John"}, function(jsonAnswer) {
-  						log('jsonAnswer = ' + JSON.stringify(jsonAnswer))
-				 		// TODO convert eventData.keyCode to char and append
-				 		RenderResults(jsonAnswer, '&shy;');
-				 }).error(function(error) { console.log(error.message); });  			  	 
-				
-				
+			 	 Process();
 			 }
          });
+
+		 Process();
     });
+
+	function Process() {
+		 $('#editable .variants').remove();
+		 var text = $('#editable').text();
+		 if (text.length > 3) {
+		 	 log("function Process() text= " + text);		 	 
+		 	 jQuery.ajax({
+	                type: "POST",
+	                url: "totify.fs",
+	                dataType:"json",
+	                timeout: 5000,
+	                data:text,
+	                success:function(response){                   
+
+	                    RenderResults(response, '<span>&shy;</span>' );//&shy;');
+	                },
+	                error:function (xhr, ajaxOptions, thrownError){
+	                    log(xhr.status);
+	                    log(thrownError);
+	                }    
+	            });	 
+	 	 }
+	}
 
 	function EnableHovers() {
 		$('#editable .with-select').hover(function () {$(this).addClass("hover")}, function () {$(this).removeClass("hover")})
@@ -44,7 +66,7 @@ $(document).ready(function () {
 			$('ul.variants').hide();
 			var key = $(this).attr('id').replace('word','')
 			log ('key ' + key);
-			$('#changes' + key).css({"left": pos.left + "px"}); $('#changes'+key).show();
+			$('#changes' + key).css({"left": pos.left-20 + "px"}); $('#changes'+key).show();
 			$('.variants li').hover(function () {$(this).addClass("hover")}, function () {$(this).removeClass("hover")});
 			$('.variants li span').click(function () {ApplySynonym(this.id)});
 		})
@@ -60,28 +82,38 @@ $(document).ready(function () {
 		SaveDraft();
 	}
     function RenderResults (data, appendix) {
-         HtmlToTTY()
-    	 log("try to render " + data);
-    	 var savedCaret = getCaret();
-    	 //log(savedSelection.focusOffset);
+         var savedCaret = getCaret();
+    	 log ("data = " + JSON.stringify(data));
     	 $('#editable').empty();
-    	 $.each(data.tokens, function(index, a)
+    	 
+    	 $.each(data, function(index, a)
     	 {
-    	 	if (a.type == "word") {    	 	
+    	 
 	    	 	var compiled_span = markup.result.apply(a);
 	    	 	$('#editable').append(compiled_span);
 	    	 	var compiled_lis = "";
-	    	 	$.each(a.synonyms, function (index, s) { compiled_lis += "<li><span id= " + s.fwid + " tid=" + a.tid + ">" + s.word + "</span></li>"; });
-	    	 	$('#changes'+a.tid).append(compiled_lis);
-    	 	}
-    	 	if (a.type == "other") {
-    	 		$('#editable').append(a.content);
-    	 	}
+	    	 	$.each(a.Changes, function (index, s) { 
+	    	 		$.each(s.Variants, function (i, v) {
+	    	 			compiled_lis += "<li class='variants'><span id='" + i + "' tid='" + a.Token.Id + "'>" + v+ "</span></li>";
+	    	 		});
+	    	 		
+	    	 	});
+	    	 	$('#changes'+a.Token.Id).append(compiled_lis + appendix);
+    	 
     	 });
-    	 $('#editable').append(appendix);
+    	 
+    	// $('#editable').append(appendix);
     	 EnableHovers();    	 
     	 setCaret(savedCaret);
-    }      
+    }    
+
+    function HtmlToText() {
+    	var result_data = "";
+    	$('#editable span.main').each(function() {    		
+    		result_data += $(this).html();
+    	});
+    	return return_data;
+    }  
     
     function HtmlToTTY() {
     	var result_data = new Object();

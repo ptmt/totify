@@ -51,7 +51,13 @@ function SaveDraft() {
 
 function GetLastDraft() {
 	if (localStorage.getItem('contenteditable')) {
-		  $('#editable').html(localStorage.getItem('contenteditable'));
+            var content = localStorage.getItem('contenteditable');
+            if (content === "")
+              $('#editable').html('<p></p>');
+            else
+		      $('#editable').html(localStorage.getItem('contenteditable'));
 		}
+        else
+            $('#editable').html("<p>Пришла пора писать красивее. Используйте всплывающие окна, включайте и выключайте фильтры</p>");
 
 }

@@ -8,8 +8,8 @@ open Totify.Filters
 
 let processText t = 
     let js = new JavaScriptSerializer()    
-    
     js.Serialize(totify t)
+    
 
 
 let myHandler (req:HttpRequest) : HttpResponse =

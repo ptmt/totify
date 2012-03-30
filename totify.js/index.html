@@ -6,53 +6,43 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Totify It Yourself</title>
+  <title>Think. Write. Totify!</title>
   <meta name="description" content="">
 
   <meta name="viewport" content="width=device-width">
   <link rel="stylesheet" href="css/style.css">
 
   <script src="js/libs/modernizr-2.5.3.min.js"></script>
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-30373597-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
 </head>
 <body>
   <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
-  <header>
-  	<h1>totify</h1>
-  </header>
-  <div role="main">
-  	<section id="editable" contenteditable="true">
-    	<p>начните вводить здесь..</p>
-	  </section>  
-	  
-  	<section id="debug">
-  	</section>
+  <div class="main">
+    <span class="promt">></span>    
+    <div id="editable" contenteditable="true">      
+    </div>  
   </div>
 
-  <footer>
-  	&copy; 2012, phinitive
-  </footer>
+<footer>
+  Это лишь <a href="/about">инструмент</a>, думайте сами. &copy; 2012, totify.com. <a href="/license">Лицензия</a> и <a href="/privacy">Политика конфиденциальности</a>
+</footer> 
 
 
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>  
 
   <script src="js/plugins.js"></script>
   <script src="js/totify.util.js"></script>
   <script src="js/totify.processing.js"></script>
-
-	<!-- Yandex.Metrika counter -->
-	<div style="display:none;"><script type="text/javascript">
-	(function(w, c) {
-	(w[c] = w[c] || []).push(function() {
-	    try {
-	        w.yaCounter13176091 = new Ya.Metrika({id:13176091, enableAll: true, trackHash:true, webvisor:true});
-	    }
-	    catch(e) { }
-	});
-	})(window, "yandex_metrika_callbacks");
-	</script></div>
-	<script src="//mc.yandex.ru/metrika/watch.js" type="text/javascript" defer="defer"></script>
-	<noscript><div><img src="//mc.yandex.ru/watch/13176091" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-	<!-- /Yandex.Metrika counter -->
+  
 </body>
 </html>
