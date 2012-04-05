@@ -1,8 +1,8 @@
-#Totify! Текстовые фильтры
+#Totify! Text Filters For Great Good
 
-Version: 0.1.1
+Version: 0.2.0
 
-See [totify.com](http://totify.com)
+[totify.com](http://totify.com)
 
-MIT License
+License under MIT License
 

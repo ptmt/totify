@@ -9,7 +9,21 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "TinyNLP.Samples", "..\tinyn
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "totify.webapp", "totify.webapp\totify.webapp.fsproj", "{F53641A6-009F-4025-AC69-2010634AB69D}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "mario.server", "..\mario\mario.server\mario.server.fsproj", "{CDBD813A-5091-4D07-B532-39487135F216}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "texts", "texts", "{94F8F29C-82F0-45F9-809B-923A9052537E}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE.md = LICENSE.md
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "totify.tests", "totify.tests\totify.tests.fsproj", "{7852EA85-2A5E-43B2-AA05-46DE67F94E50}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "TinyNLP.Tests", "..\tinynlp.fs\tests\TinyNLP.Tests.fsproj", "{549886F0-A0DD-4290-ACFA-1C3F09E5ECB6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "mario", "mario", "{FFA8DCFD-3385-4BE1-8AF7-B4872E674007}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tinynlp", "tinynlp", "{93C7D74A-0D0F-474B-8AF0-7DEB45E59987}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "mario.server", "..\mario\src\mario.server.fsproj", "{CDBD813A-5091-4D07-B532-39487135F216}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +47,16 @@ Global
 		{514F5744-17B0-4726-8976-77491F11CC0A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{514F5744-17B0-4726-8976-77491F11CC0A}.Release|x64.ActiveCfg = Release|x64
 		{514F5744-17B0-4726-8976-77491F11CC0A}.Release|x64.Build.0 = Release|x64
+		{549886F0-A0DD-4290-ACFA-1C3F09E5ECB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{549886F0-A0DD-4290-ACFA-1C3F09E5ECB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{549886F0-A0DD-4290-ACFA-1C3F09E5ECB6}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{549886F0-A0DD-4290-ACFA-1C3F09E5ECB6}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{549886F0-A0DD-4290-ACFA-1C3F09E5ECB6}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{549886F0-A0DD-4290-ACFA-1C3F09E5ECB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{549886F0-A0DD-4290-ACFA-1C3F09E5ECB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{549886F0-A0DD-4290-ACFA-1C3F09E5ECB6}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{549886F0-A0DD-4290-ACFA-1C3F09E5ECB6}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{549886F0-A0DD-4290-ACFA-1C3F09E5ECB6}.Release|x64.ActiveCfg = Release|Any CPU
 		{6847B6B2-ECAA-4A65-BF19-DBC70BF5F503}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6847B6B2-ECAA-4A65-BF19-DBC70BF5F503}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6847B6B2-ECAA-4A65-BF19-DBC70BF5F503}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
@@ -43,6 +67,16 @@ Global
 		{6847B6B2-ECAA-4A65-BF19-DBC70BF5F503}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{6847B6B2-ECAA-4A65-BF19-DBC70BF5F503}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{6847B6B2-ECAA-4A65-BF19-DBC70BF5F503}.Release|x64.ActiveCfg = Release|Any CPU
+		{7852EA85-2A5E-43B2-AA05-46DE67F94E50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7852EA85-2A5E-43B2-AA05-46DE67F94E50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7852EA85-2A5E-43B2-AA05-46DE67F94E50}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{7852EA85-2A5E-43B2-AA05-46DE67F94E50}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{7852EA85-2A5E-43B2-AA05-46DE67F94E50}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{7852EA85-2A5E-43B2-AA05-46DE67F94E50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7852EA85-2A5E-43B2-AA05-46DE67F94E50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7852EA85-2A5E-43B2-AA05-46DE67F94E50}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{7852EA85-2A5E-43B2-AA05-46DE67F94E50}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{7852EA85-2A5E-43B2-AA05-46DE67F94E50}.Release|x64.ActiveCfg = Release|Any CPU
 		{A7EB0A48-9CEF-4FC3-A6A0-6E49E2B979DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A7EB0A48-9CEF-4FC3-A6A0-6E49E2B979DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A7EB0A48-9CEF-4FC3-A6A0-6E49E2B979DD}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
@@ -76,5 +110,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{514F5744-17B0-4726-8976-77491F11CC0A} = {93C7D74A-0D0F-474B-8AF0-7DEB45E59987}
+		{549886F0-A0DD-4290-ACFA-1C3F09E5ECB6} = {93C7D74A-0D0F-474B-8AF0-7DEB45E59987}
+		{6847B6B2-ECAA-4A65-BF19-DBC70BF5F503} = {93C7D74A-0D0F-474B-8AF0-7DEB45E59987}
+		{CDBD813A-5091-4D07-B532-39487135F216} = {FFA8DCFD-3385-4BE1-8AF7-B4872E674007}
 	EndGlobalSection
 EndGlobal
