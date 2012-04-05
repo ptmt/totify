@@ -22,7 +22,7 @@
         ctrl = document.getElementById('editable');
         ctrl.focus();
         //pos = ctrl.value.length;   
-        log ("moving to pos = " + pos);
+        util.log ("moving to pos = " + pos);
         var range,selection;
         if(document.createRange)//Firefox, Chrome, Opera, Safari, IE 9+
         {
@@ -46,7 +46,7 @@
     };
 
     util.saveDraft = function(id) {
-        log ('saving...' + $(id).html());
+        util.log ('saving...' + $(id).html());
         localStorage.setItem('contenteditable', $(id).html());
     };
 
@@ -55,12 +55,12 @@
         {
             var content = localStorage.getItem('contenteditable');
             if (content === "")
-              $(id).html('<p></p>');
+              $(id).html('<span></span>');
             else
               $(id).html(localStorage.getItem('contenteditable'));
         }
         else
-            $(id).html("<p>Пришла пора писать красивее. Используйте всплывающие окна, включайте и выключайте фильтры</p>");
+            $(id).html("<span>Привет, круто, что ты с нами</span>"); //. Используйте всплывающие окна, включайте и выключайте фильтры</p>");
     };    
     
 }(window.util = window.util || {}, jQuery));

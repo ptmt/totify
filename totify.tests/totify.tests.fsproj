@@ -37,10 +37,7 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Compile Include="test_helpers.fs" />
-    <Compile Include="tokenizer_tests.fs" />
-    <Compile Include="synonymizer_tests.fs">
-      <SubType>Test</SubType>
-    </Compile>
+    <Compile Include="filter1_tests.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FsUnit.NUnit">
@@ -72,6 +69,11 @@
     <ProjectReference Include="..\..\tinynlp.fs\TinyNLP.fs.fsproj">
       <Name>TinyNLP.fs</Name>
       <Project>{514f5744-17b0-4726-8976-77491f11cc0a}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Totify.Filters\Totify.Filters.fsproj">
+      <Name>Totify.Filters</Name>
+      <Project>{a7eb0a48-9cef-4fc3-a6a0-6e49e2b979dd}</Project>
       <Private>True</Private>
     </ProjectReference>
   </ItemGroup>

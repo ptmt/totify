@@ -54,7 +54,7 @@
     <Reference Include="System.Web.Extensions" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\mario\mario.server\mario.server.fsproj">
+    <ProjectReference Include="..\..\mario\src\mario.server.fsproj">
       <Name>mario.server</Name>
       <Project>{cdbd813a-5091-4d07-b532-39487135f216}</Project>
       <Private>True</Private>

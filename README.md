@@ -1,8 +1,8 @@
-#Totify! Текстовые фильтры
+#Totify! Text Filters
 
-Version: 0.1.1
+Version: 0.2.0
 
-Url:[totify.com](http://totify.com)
+[totify.com](http://totify.com)
 
 License: MIT License
 

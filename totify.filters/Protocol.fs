@@ -1,8 +1,11 @@
 ﻿module Totify.Protocol
 
+
+
 type Token = {
     Id: int;
     Content: string;
+    Class:TinyNLP.Tokenizer.TokenClass;
 }
 
 type ChangeType = 
