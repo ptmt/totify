@@ -6,6 +6,7 @@ type Token = {
     Id: int;
     Content: string;
     Class:TinyNLP.Tokenizer.TokenClass;
+    Tag:string list;
 }
 
 type ChangeType = 

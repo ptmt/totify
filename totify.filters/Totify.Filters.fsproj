@@ -36,9 +36,13 @@
   <Import Project="$(MSBuildExtensionsPath32)\..\Microsoft SDKs\F#\3.0\Framework\v4.0\Microsoft.FSharp.Targets" Condition=" Exists('$(MSBuildExtensionsPath32)\..\Microsoft SDKs\F#\3.0\Framework\v4.0\Microsoft.FSharp.Targets')" />
   <ItemGroup>
     <Compile Include="Protocol.fs" />
+    <Compile Include="NLP.fs" />
     <Compile Include="Master.fs" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Kevo.Core">
+      <HintPath>..\..\kevo\Kevo.Core\bin\Debug\Kevo.Core.dll</HintPath>
+    </Reference>
     <Reference Include="mscorlib" />
     <Reference Include="FSharp.Core, Version=4.3.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <Private>True</Private>
@@ -46,6 +50,11 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Numerics" />
+    <ProjectReference Include="..\..\tinynlp.fs\postagger\postagger.fsproj">
+      <Name>postagger</Name>
+      <Project>{174b13db-703e-4db7-a49d-1db7c0c6e967}</Project>
+      <Private>True</Private>
+    </ProjectReference>
     <ProjectReference Include="..\..\tinynlp.fs\TinyNLP.fs.fsproj">
       <Name>TinyNLP.fs</Name>
       <Project>{514f5744-17b0-4726-8976-77491f11cc0a}</Project>
