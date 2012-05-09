@@ -96,6 +96,8 @@ td { vertical-align: top; }
 }
 
 body {background:#C8C8C8; /*E8E8E8*/color:#444; text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.2) ;font-family: arial,sans-serif;}
+.overlay {background:black;display:block;left:0;opacity:0.4;filter: alpha(opacity = 40);position:fixed;top:0;width: 100%;height: 100%;z-index: 1000;}
+.loading {display:none;}
 div.main {margin: 10%;min-height:305px; display:block;font-size: 20px;z-index:100;outline: none; background-color:#FFF;box-shadow: 0 1px 0 rgba(0,0,0,0.3),0 -1px 0 rgba(255,255,255,0.8),0 4px 10px rgba(0,0,0,0.6);}
 #editable { padding: 19px 20px 20px 35px;min-height:305px;line-height:25px;}
 #editable:focus{outline: none;  }
@@ -107,6 +109,7 @@ footer a{color:#444;}
 footer a:hover{color:#000;}
 
 /*#editable .word {margin-right:5px;}*/
+.with-select {border-bottom:2px #9cf solid;}
 #editable .with-select.hover {color:black;background:yellow;border-radius:2px;}
 #editable ul.variants {border-radius:4px;border:#ccc 1px solid;position:absolute; display:none; list-style: none;font-size: 12px; 
     padding: 2px;margin: 0px; background: #eee;line-height:14px;box-shadow: 0 1px 0 rgba(0,0,0,0.2),0 -1px 0 rgba(255,255,255,0.2),0 2px 10px rgba(0,0,0,0.3);}
@@ -114,3 +117,101 @@ footer a:hover{color:#000;}
 #editable .variants li.primary {color:#999; font-family:monospace; font-size:10px; text-align:center;}
 #editable .variants li.hover {background:#FFA500; text-shadow:none; cursor:pointer;}
 #readonly {padding:20px; font-size:0.7em;}
+
+#circular3dG{position:absolute;top:244px;left: 50%;width:128px;height:128px;margin-left: -64px;margin-top: -64px;z-index: 1500;}
+#circleG{width:37.333333333333336px;}
+.circleG{
+background-color:#FFFFFF;
+float:left;
+height:8px;
+margin-left:4px;
+width:8px;
+-webkit-animation-name:bounce_circleG;
+-webkit-border-radius:5px;
+-webkit-animation-duration:0.75s;
+-webkit-animation-iteration-count:infinite;
+-webkit-animation-direction:linear;
+-moz-animation-name:bounce_circleG;
+-moz-border-radius:5px;
+-moz-animation-duration:0.75s;
+-moz-animation-iteration-count:infinite;
+-moz-animation-direction:linear;
+opacity:0.3;
+-o-animation-name:bounce_circleG;
+border-radius:5px;
+-o-animation-duration:0.75s;
+-o-animation-iteration-count:infinite;
+-o-animation-direction:linear;
+-ms-animation-name:bounce_circleG;
+-ms-animation-duration:0.75s;
+-ms-animation-iteration-count:infinite;
+-ms-animation-direction:linear;
+opacity:0.3}
+
+#circleG_1{
+-webkit-animation-delay:0.15000000000000002s;
+-moz-animation-delay:0.15000000000000002s;
+-o-animation-delay:0.15000000000000002s;
+-ms-animation-delay:0.15000000000000002s;
+}
+
+#circleG_2{
+-webkit-animation-delay:0.35000000000000003s;
+-moz-animation-delay:0.35000000000000003s;
+-o-animation-delay:0.35000000000000003s;
+-ms-animation-delay:0.35000000000000003s;
+}
+
+#circleG_3{
+-webkit-animation-delay:0.45s;
+-moz-animation-delay:0.45s;
+-o-animation-delay:0.45s;
+-ms-animation-delay:0.45s;
+}
+
+@-webkit-keyframes bounce_circleG{
+0%{
+opacity:0.3}
+
+50%{
+opacity:1;
+background-color:#000000}
+
+100%{
+opacity:0.3}
+
+}
+
+@-moz-keyframes bounce_circleG{
+0%{
+opacity:0.3}
+
+50%{
+opacity:1;
+background-color:#000000}
+
+100%{
+opacity:0.3}
+
+}
+
+@-o-keyframes bounce_circleG{
+0%{
+opacity:0.3}
+
+50%{
+opacity:1;
+background-color:#000000}
+
+100%{
+opacity:0.3}
+
+}
+
+@-ms-keyframes bounce_circleG{
+  0%{opacity:0.3}
+
+  50%{ opacity:1; background-color:#000000}
+
+  100%{ opacity:0.3}
+}

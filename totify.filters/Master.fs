@@ -11,7 +11,7 @@ let prepareText text =
         | None ->             
             [ {Id = 1; Content = "prepareText error"; Class = TokenClass.Other; Tag = ["UNKN"]} ]
         | _ -> 
-            let t = Totify.NLP.tagTokens (["<S>"] @ r.Value @ ["</S"])
+            let t = Totify.NLP.tagTokens (["<S>"] @ r.Value @ ["</S>"])
             r.Value |> List.mapi (fun i x-> { Id = i; Content = x.Trim(); Class = TinyNLP.Tokenizer.tokenClassifier x; Tag = t.[i]})
 
 

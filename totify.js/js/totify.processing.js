@@ -59,6 +59,7 @@ $(document).ready(function () {
 			 $('#editable .variants').remove();
 			 var text = totify.htmlToText();//$('#editable').text();
 			 if (text.length > 3) {
+			 	 $('.loading').show();
 			 	 util.log("function Process() text= " + text);		 	 
 			 	 jQuery.ajax({
 		                type: "POST",
@@ -66,13 +67,14 @@ $(document).ready(function () {
 		                scriptCharset: "utf-8" ,
 		                contentType: "application/json; charset=utf-8",
 		                dataType:"json",
-		                timeout: 5000,
+		                timeout: 15000,
 		                data:text,
 		                success:function(response){                  
-
+		                	$('.loading').hide();
 		                    totify.renderResults(response);//, '<span>&shy;</span>' );//&shy;');
 		                },
 		                error:function (xhr, ajaxOptions, thrownError){
+		                	$('.loading').hide();
 		                    util.log(xhr.status);
 		                    util.log(thrownError);
 		                }    
