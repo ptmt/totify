@@ -38,11 +38,15 @@
     <None Include="packages.config" />
     <Compile Include="test_helpers.fs" />
     <Compile Include="filter1_tests.fs" />
+    <Compile Include="filter2_tests.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FsUnit.NUnit">
       <HintPath>..\packages\FsUnit.1.0.0.4\Lib\Net40\FsUnit.NUnit.dll</HintPath>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="Kevo.Core">
+      <HintPath>..\..\kevo\Kevo.Core\bin\Debug\Kevo.Core.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
     <Reference Include="mscorlib" />

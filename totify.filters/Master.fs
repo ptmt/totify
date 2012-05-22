@@ -1,4 +1,4 @@
-﻿module Totify.Filters
+﻿module Totify.Filters.Master
 
 open TinyNLP
 open TinyNLP.Tokenizer
