@@ -3,11 +3,12 @@
 open NUnit.Framework  
 open TinyNLP
 open Totify.Tests.Helpers
+open Totify.Filters.Filter2
 
 [<Test>]
 let ``filter 2 should able to add new rules`` () =   
-    let i = Kevo.Store.lastid
+    let i = Kevo.Store.lastid<ReplaceRule>
     Totify.Filters.Filter2.insertRule "какбэ" ""
     Totify.Filters.Filter2.insertRule "ну" ""
-    System.Threading.Thread.Sleep(1000)
-    Kevo.Store.lastid - i = 2 |> shouldBeTrue
+    //Kevo.AppendLog.waitForIt<ReplaceRule>
+    Kevo.Store.lastid<ReplaceRule> - i = 2 |> shouldBeTrue

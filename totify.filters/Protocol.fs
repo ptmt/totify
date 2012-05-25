@@ -15,6 +15,7 @@ type ChangeType =
 
 
 type Change = {
+    FilterName : string;
     Variants : string list;    
 }
 

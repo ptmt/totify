@@ -11,15 +11,31 @@ let prepareText text =
         | None ->             
             [ {Id = 1; Content = "prepareText error"; Class = TokenClass.Other; Tag = ["UNKN"]} ]
         | _ -> 
-            let t = Totify.NLP.tagTokens (["<S>"] @ r.Value @ ["</S>"])
+            let t = Totify.Utils.tagTokens (["<S>"] @ r.Value @ ["</S>"])
             r.Value |> List.mapi (fun i x-> { Id = i; Content = x.Trim(); Class = TinyNLP.Tokenizer.tokenClassifier x; Tag = t.[i]})
 
 
 // FILTER #1: Synonymize It!
 let synonymFilter tokensList = 
-    tokensList |> List.map (fun x -> { Token = x; Changes = [{ Variants = TinyNLP.Synonymizer.getSynonyms(TinyNLP.Stemming.Stem x.Content)} ]})
+    tokensList |> List.map (fun x -> 
+        { Token = x;
+          Changes = [
+          { 
+            FilterName="synonyms";
+            Variants = TinyNLP.Synonymizer.getSynonyms(TinyNLP.Stemming.Stem x.Content) x.Tag.Head
+          }
+        ]})
+
+// FILTER #2: Kill The Bad Words
+let replaceFilter nodes =
+    nodes |> List.map (fun x -> 
+        let replaces = Filter2.searchReplaces x.Token.Content
+        match replaces with 
+            | None -> x
+            | _ -> { Token = x.Token; Changes = x.Changes @ [{FilterName="replaces"; Variants = replaces.Value} ]})
+
 
 //let tagger (nodeList: Node list) = 
 //    nodeList |> List.map (fun x -> { Token = x; Changes = x.Changes @ 
 let totify text =
-    prepareText text |> synonymFilter
+    prepareText text |> synonymFilter |> replaceFilter

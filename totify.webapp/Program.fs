@@ -21,7 +21,7 @@ let filter2Helper (s:string) =
     
 let myHandler (req:HttpRequest) : HttpResponse =
     match req.Uri with 
-        | "totify.fs" when req.Method = HttpMethod.POST -> { Json = (processText req.Body) }
+        | "/totify.fs" when req.Method = HttpMethod.POST -> { Json = (processText req.Body) }
         | "/filter2/backend.fs" when req.Method = HttpMethod.GET -> { Json = json Totify.Filters.Filter2.getAllReplaces }
         | "/filter2/backend.fs" when req.Method = HttpMethod.PUT -> { Json = filter2Helper req.Body } //        
         | _ -> { Json = "Unsupported request: " + req.Uri }

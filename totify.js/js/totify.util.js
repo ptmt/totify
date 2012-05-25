@@ -46,8 +46,8 @@
     };
 
     util.saveDraft = function(id) {
-        util.log ('saving...' + $(id).html());
-        localStorage.setItem('contenteditable', $(id).html());
+        //util.log ('saving...' + $(id).html());
+        localStorage.setItem('contenteditable', $(id).text());
     };
 
     util.getLastDraft = function(id) {

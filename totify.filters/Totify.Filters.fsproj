@@ -36,7 +36,7 @@
   <Import Project="$(MSBuildExtensionsPath32)\..\Microsoft SDKs\F#\3.0\Framework\v4.0\Microsoft.FSharp.Targets" Condition=" Exists('$(MSBuildExtensionsPath32)\..\Microsoft SDKs\F#\3.0\Framework\v4.0\Microsoft.FSharp.Targets')" />
   <ItemGroup>
     <Compile Include="Protocol.fs" />
-    <Compile Include="NLP.fs" />
+    <Compile Include="Utils.fs" />
     <Compile Include="Filter2.fs" />
     <Compile Include="Master.fs" />
   </ItemGroup>

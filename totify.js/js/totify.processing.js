@@ -39,7 +39,7 @@ $(document).ready(function () {
 	markup={};
 	markup.result = function() {
 	  html='<span id="word' + this.Token.Id + '" class="word ';
-	  if (this.Changes.length > 0 && this.Changes[0].Variants.length > 1) { 
+	  if (this.Changes.length > 0) { 
 	  	html+='with-select';
 	  } 
 	  html+= ' main">'+this.Token.Content +'</span>';	 
@@ -114,15 +114,16 @@ $(document).ready(function () {
 	totify.renderResults  = function  (data, appendix) {
          var savedCaret = util.getCaret();
     	 util.log ("data = " + JSON.stringify(data));
-    	 $('#editable').empty();
-    	 
+    	 $('#editable').empty();    	 
     	 $.each(data, function(index, a)
     	 {
     	 		if (a.Token.Class == 1) {
 		    	 	var compiled_span = markup.result.apply(a);
 		    	 	$('#editable').append(compiled_span + "<span class='main space'>&nbsp;</span>");
 		    	 	var compiled_lis = "";
-		    	 	$.each(a.Changes, function (index, s) { 		    	 		
+
+		    	 	$.each(a.Changes, function (index, s) { 	
+		    	 		util.log(s.FilterName);	    	 		
 		    	 		if (s.Variants.length > 0) {
 			    	 		$.each(s.Variants, function (i, v) {
 			    	 			compiled_lis += "<li class='variants'><span id='" + a.Token.Id + "_" + i + "' tid='" + a.Token.Id + "'>" + v+ "</span></li>";
