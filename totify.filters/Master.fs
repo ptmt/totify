@@ -9,10 +9,14 @@ let prepareText text =
     let r = TinyNLP.Tokenizer.tokenize text
     match r with
         | None ->             
-            [ {Id = 1; Content = "prepareText error"; Class = TokenClass.Other; Tag = ["UNKN"]} ]
+            [ {Id = 1; Content = "prepareText error"; Class = TokenClass.Other; Tag = ["UNKN"]; Stem = ""} ]
         | _ -> 
             let t = Totify.Utils.tagTokens (["<S>"] @ r.Value @ ["</S>"])
-            r.Value |> List.mapi (fun i x-> { Id = i; Content = x.Trim(); Class = TinyNLP.Tokenizer.tokenClassifier x; Tag = t.[i]})
+            r.Value |> List.mapi (fun i x -> { Id = i; 
+                Content = x.Trim();
+                Stem = TinyNLP.Stemming.Stem x;
+                Class = TinyNLP.Tokenizer.tokenClassifier x;
+                Tag = t.[i]})
 
 
 // FILTER #1: Synonymize It!
@@ -22,7 +26,7 @@ let synonymFilter tokensList =
           Changes = [
           { 
             FilterName="synonyms";
-            Variants = TinyNLP.Synonymizer.getSynonyms(TinyNLP.Stemming.Stem x.Content) x.Tag.Head
+            Variants = TinyNLP.Synonymizer.getSynonyms(x.Stem) x.Tag.Head
           }
         ]})
 
@@ -35,7 +39,5 @@ let replaceFilter nodes =
             | _ -> { Token = x.Token; Changes = x.Changes @ [{FilterName="replaces"; Variants = replaces.Value} ]})
 
 
-//let tagger (nodeList: Node list) = 
-//    nodeList |> List.map (fun x -> { Token = x; Changes = x.Changes @ 
 let totify text =
     prepareText text |> synonymFilter |> replaceFilter

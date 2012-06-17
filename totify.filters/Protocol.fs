@@ -5,6 +5,7 @@
 type Token = {
     Id: int;
     Content: string;
+    Stem:string;
     Class:TinyNLP.Tokenizer.TokenClass;
     Tag:string list;
 }

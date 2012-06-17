@@ -47,7 +47,17 @@
 
     util.saveDraft = function(id) {
         //util.log ('saving...' + $(id).html());
-        localStorage.setItem('contenteditable', $(id).text());
+        var to_save = "";
+        $('#editable span.main').each(function() {   
+            if ($(this).hasClass("space"))  
+                to_save += " ";
+            else    
+                to_save += $(this).html();
+        });
+        if (to_save === "")
+            to_save = $('#editable').text();
+        util.log ('SAVING' + to_save);
+        localStorage.setItem('contenteditable', to_save);
     };
 
     util.getLastDraft = function(id) {

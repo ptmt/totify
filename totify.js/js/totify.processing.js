@@ -39,7 +39,7 @@ $(document).ready(function () {
 	markup={};
 	markup.result = function() {
 	  html='<span id="word' + this.Token.Id + '" class="word ';
-	  if (this.Changes.length > 0) { 
+	  if (this.Changes.length > 0 && this.Changes[0].Variants.length > 0) { 
 	  	html+='with-select';
 	  } 
 	  html+= ' main">'+this.Token.Content +'</span>';	 
@@ -111,6 +111,15 @@ $(document).ready(function () {
 		util.saveDraft();
 	}
 
+	totify.renderFilterName = function(filtername) {
+		var rus_name = "";
+		if (filtername == "synonyms")
+			rus_name = "Синонимы";
+		if (filtername == "replaces")
+			rus_name = "Замены";
+		return "<li class='highlighted'>" + rus_name + "</li>";		
+	}
+
 	totify.renderResults  = function  (data, appendix) {
          var savedCaret = util.getCaret();
     	 util.log ("data = " + JSON.stringify(data));
@@ -123,9 +132,10 @@ $(document).ready(function () {
 		    	 	var compiled_lis = "";
 
 		    	 	$.each(a.Changes, function (index, s) { 	
-		    	 		util.log(s.FilterName);	    	 		
+		    	 		//util.log(s.FilterName);	    	 		
+		    	 		compiled_lis += totify.renderFilterName(s.FilterName);
 		    	 		if (s.Variants.length > 0) {
-			    	 		$.each(s.Variants, function (i, v) {
+			    	 		$.each(s.Variants, function (i, v) {			    	 			
 			    	 			compiled_lis += "<li class='variants'><span id='" + a.Token.Id + "_" + i + "' tid='" + a.Token.Id + "'>" + v+ "</span></li>";
 			    	 		});
 		    	 		}
@@ -152,14 +162,8 @@ $(document).ready(function () {
     totify.htmlToText = function() {
     	var result_data = "";
     
-    	//$('#editable span.main').each(function() {   
-    	//	if ($(this).hasClass("space")) 	
-    	//		result_data += " ";
-    	//	else	
-    	//		result_data += $(this).html();
-    	//});
-    	//if (result_data === "")
-    	result_data = totify.string_replace($('#editable').text(), String.fromCharCode(160), String.fromCharCode(32));
+
+    	result_data = totify.string_replace( $('#editable').text(), String.fromCharCode(160), String.fromCharCode(32));
     	//for(i =0; i < result_data.length; i++){
 		  //var chr = result.charAt(i);
 		//  var hexval = result_data.charCodeAt(i);

@@ -38,6 +38,7 @@
     <Compile Include="Protocol.fs" />
     <Compile Include="Utils.fs" />
     <Compile Include="Filter2.fs" />
+    <Compile Include="Quotes.fs" />
     <Compile Include="Master.fs" />
   </ItemGroup>
   <ItemGroup>

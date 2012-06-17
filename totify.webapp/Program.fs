@@ -1,29 +1,19 @@
-﻿module Totify.Web
+﻿module Totify.Web.Handler
 
-open System.Web.Script.Serialization
+
 open Mario.HttpContext
 open Mario.WebServer
 open Totify.Filters.Master
+open Totify.Web.Helpers
 
 
-let json t =
-    let js = new JavaScriptSerializer()    
-    js.Serialize(t)
 
-let processText (t:string) = 
-    totify t |> json
-
-let filter2Helper (s:string) = 
-    let param = s.Split('&') |> Array.map (fun x -> x.Split('=').[1])
-    Totify.Filters.Filter2.insertRule param.[0] param.[1]
-    printfn "%A" param
-    "true"
-    
 let myHandler (req:HttpRequest) : HttpResponse =
     match req.Uri with 
-        | "/totify.fs" when req.Method = HttpMethod.POST -> { Json = (processText req.Body) }
-        | "/filter2/backend.fs" when req.Method = HttpMethod.GET -> { Json = json Totify.Filters.Filter2.getAllReplaces }
-        | "/filter2/backend.fs" when req.Method = HttpMethod.PUT -> { Json = filter2Helper req.Body } //        
+        | "/totify.fs" when req.Method = HttpMethod.POST -> { Json = (totify req.Body) |> json }
+        | "/api.fs" when req.Method = HttpMethod.POST -> { Json = (totify req.Body) |> json |> jsonp }
+        | "/panel/filter2.fs" -> Totify.Web.FiltersController.filter2Action req.Body req.Method    
+        | "/panel/helper1.fs" -> Totify.Web.ServicesController.helper1Action req.Body req.Method    
         | _ -> { Json = "Unsupported request: " + req.Uri }
     
 

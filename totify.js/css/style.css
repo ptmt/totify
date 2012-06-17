@@ -116,6 +116,7 @@ footer a:hover{color:#000;}
 #editable .variants li {padding-left:8px;margin:0px;}
 #editable .variants li.primary {color:#999; font-family:monospace; font-size:10px; text-align:center;}
 #editable .variants li.hover {background:#FFA500; text-shadow:none; cursor:pointer;}
+.highlighted {text-weight:bold;font-size:0.8em;text-align:center;}
 #readonly {padding:20px; font-size:0.7em;}
 
 #circular3dG{position:absolute;top:244px;left: 50%;width:128px;height:128px;margin-left: -64px;margin-top: -64px;z-index: 1500;}
