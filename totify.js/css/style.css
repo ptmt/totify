@@ -98,12 +98,16 @@ td { vertical-align: top; }
 body {background:#C8C8C8; /*E8E8E8*/color:#444; text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.2) ;font-family: arial,sans-serif;}
 .overlay {background:black;display:block;left:0;opacity:0.4;filter: alpha(opacity = 40);position:fixed;top:0;width: 100%;height: 100%;z-index: 1000;}
 .loading {display:none;}
-div.main {margin: 10%;min-height:305px; display:block;font-size: 20px;z-index:100;outline: none; background-color:#FFF;box-shadow: 0 1px 0 rgba(0,0,0,0.3),0 -1px 0 rgba(255,255,255,0.8),0 4px 10px rgba(0,0,0,0.6);}
+div.main {margin: 5% 10%;min-height:305px; display:block;font-size: 20px;z-index:100;outline: none; background-color:#FFF;box-shadow: 0 1px 0 rgba(0,0,0,0.3),0 -1px 0 rgba(255,255,255,0.8),0 4px 10px rgba(0,0,0,0.6);}
 #editable { padding: 19px 20px 20px 35px;min-height:305px;line-height:25px;}
 #editable:focus{outline: none;  }
 .promt {padding:20px;position:absolute; color: #DDD;}
 .helpbuttons{position:absolute;right:11%; color: #DDD;}
 .helpbuttons a{color: #DDD;}
+
+.quote-text {margin: 10% 15%;font-size:24px;font-family:'Times New Roman';}
+.quote-author {margin-right: 10%;font-size:14px;font-family:'Times New Roman';text-align:right;}
+
 footer {text-align:center;font-size:10px;padding-bottom:5px;}
 footer a{color:#444;}
 footer a:hover{color:#000;}

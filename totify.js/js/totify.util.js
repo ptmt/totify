@@ -56,7 +56,7 @@
         });
         if (to_save === "")
             to_save = $('#editable').text();
-        util.log ('SAVING' + to_save);
+        util.log ('SAVING to localStorage <' + to_save + '>');
         localStorage.setItem('contenteditable', to_save);
     };
 

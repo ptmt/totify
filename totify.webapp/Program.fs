@@ -14,7 +14,8 @@ let myHandler (req:HttpRequest) : HttpResponse =
         | "/api.fs" when req.Method = HttpMethod.POST -> { Json = (totify req.Body) |> json |> jsonp }
         | "/panel/filter2.fs" -> Totify.Web.FiltersController.filter2Action req.Body req.Method    
         | "/panel/helper1.fs" -> Totify.Web.ServicesController.helper1Action req.Body req.Method    
-        | _ -> { Json = "Unsupported request: " + req.Uri }
+        | "/quote.fs?random" -> Totify.Web.ServicesController.qouteAction req.Body req.Method
+        | _ -> badRequest
     
 
 Mario.Start(myHandler)

@@ -5,6 +5,9 @@ $(document).ready(function () {
 		util.getLastDraft('#editable');
 		totify.enableHovers();
 		util.setCaret(0);
+		totify.quotechange();
+		setTimeout(totify.quotechange, 10000);
+
 
 		$('#editable').live('mousedown focus', function() {
 		   $('#editable').addClass('changing');
@@ -20,13 +23,8 @@ $(document).ready(function () {
 				global_lock_timeout = "";
 			 }
 			 global_lock_timeout = setTimeout(totify.process,1000);	
-			 totify.hideVariants();			
-			// var isNewWordTyped = eventData.keyCode == 32; // temporary it is happens if only space pressed
-			// if (isNewWordTyped) {	
-			 	// util.log('new word detected');
-			 	// totify.unlockWindow();
-			 	// totify.process();
-			// }
+			 totify.hideVariants();	
+			
          });
 		 totify.process();
     });
@@ -60,7 +58,7 @@ $(document).ready(function () {
 			 var text = totify.htmlToText();//$('#editable').text();
 			 if (text.length > 3) {
 			 	 $('.loading').show();
-			 	 util.log("function Process() text= " + text);		 	 
+			 	 //util.log("function Process() text= " + text);		 	 
 			 	 jQuery.ajax({
 		                type: "POST",
 		                url: "totify.fs",
@@ -122,7 +120,7 @@ $(document).ready(function () {
 
 	totify.renderResults  = function  (data, appendix) {
          var savedCaret = util.getCaret();
-    	 util.log ("data = " + JSON.stringify(data));
+    	 //util.log ("data = " + JSON.stringify(data));
     	 $('#editable').empty();    	 
     	 $.each(data, function(index, a)
     	 {
@@ -172,6 +170,26 @@ $(document).ready(function () {
     	return result_data;//.string_replace(result_data," ","<s>");//.string_replace(" ", "<sp>");
     }  
     
-
+    totify.quotechange = function() {
+    	 jQuery.ajax({
+		                type: "GET",
+		                url: "quote.fs?random",
+		                scriptCharset: "utf-8" ,
+		                contentType: "application/json; charset=utf-8",
+		                dataType:"json",
+		                timeout: 5000,		               
+		                success:function(response){                  
+		                	util.log ("data = " + JSON.stringify(response));
+				    		$('.quote-text').html('«' + response.Quote + '»');
+				    		$('.quote-text').append('<div class="quote-author">&mdash; ' + response.Author + '</div>');
+		                },
+		                error:function (xhr, ajaxOptions, thrownError){
+		                	$('.loading').hide();
+		                    util.log(xhr.status);
+		                    util.log(thrownError);
+		                }    
+		            });	 
+    	
+    }
 
 }(window.totify = window.totify || {}, jQuery));

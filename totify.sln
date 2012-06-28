@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 11
+# Visual Studio 2012
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "TinyNLP.fs", "..\tinynlp.fs\TinyNLP.fs.fsproj", "{514F5744-17B0-4726-8976-77491F11CC0A}"
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Totify.Filters", "Totify.Filters\Totify.Filters.fsproj", "{A7EB0A48-9CEF-4FC3-A6A0-6E49E2B979DD}"
@@ -129,8 +129,5 @@ Global
 		{549886F0-A0DD-4290-ACFA-1C3F09E5ECB6} = {93C7D74A-0D0F-474B-8AF0-7DEB45E59987}
 		{6847B6B2-ECAA-4A65-BF19-DBC70BF5F503} = {93C7D74A-0D0F-474B-8AF0-7DEB45E59987}
 		{CDBD813A-5091-4D07-B532-39487135F216} = {FFA8DCFD-3385-4BE1-8AF7-B4872E674007}
-	EndGlobalSection
-	GlobalSection(Performance) = preSolution
-		HasPerformanceSessions = true
 	EndGlobalSection
 EndGlobal
