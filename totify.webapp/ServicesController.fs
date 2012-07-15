@@ -18,7 +18,7 @@ let quoteHelper =
 let helper1Action 
     (body:string) (http_method:HttpMethod) = 
     match http_method with
-        | HttpMethod.PUT -> { Json = helper1Helper body }
+        | HttpMethod.PUT -> { Json = helper1Helper (body |> Mario.HttpUtility.decode)}
         | HttpMethod.GET -> { Json = json Totify.Filters.Quotes.getAllQuotes }
         | _ -> badRequest
 
