@@ -1,4 +1,4 @@
-﻿module LanguageModel
+﻿module Totify.Parser.LanguageModel
 
 open System.Collections.Generic
 open ProtoBuf

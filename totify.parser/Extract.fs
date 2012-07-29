@@ -1,4 +1,4 @@
-﻿module Extract
+﻿module Totify.Parser.Extract
 
 open System.Text.RegularExpressions
 

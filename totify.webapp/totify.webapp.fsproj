@@ -43,6 +43,7 @@
     <Compile Include="Helpers.fs" />
     <Compile Include="FiltersController.fs" />
     <Compile Include="ServicesController.fs" />
+    <Compile Include="LabsController.fs" />
     <Compile Include="Program.fs" />
     <None Include="packages.config" />
   </ItemGroup>
@@ -70,6 +71,11 @@
     <ProjectReference Include="..\Totify.Filters\Totify.Filters.fsproj">
       <Name>Totify.Filters</Name>
       <Project>{a7eb0a48-9cef-4fc3-a6a0-6e49e2b979dd}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\totify.parser\totify.parser.fsproj">
+      <Name>totify.parser</Name>
+      <Project>{3ec08b94-49e3-428c-9a83-b952eb4aef7e}</Project>
       <Private>True</Private>
     </ProjectReference>
   </ItemGroup>

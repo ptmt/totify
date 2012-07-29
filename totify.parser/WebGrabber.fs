@@ -1,11 +1,13 @@
-﻿module WebGrabber
+﻿module Totify.Parser.WebGrabber
 
 open System.Json
 // https://github.com/d1ffuz0r/2ch-API/blob/master/api2ch.py
 
 let dvach_url = "http://2ch.so/"
 let boards_api = "/wakaba.json"
-let dvach_boards = ["s"; "pr"; "fiz"; "b"; "sex"]
+let dvach_boards = ["s"; "pr"; "fiz"; "b"; "sex"; "app"; "g"; "dev"; "ew"; "biz"; "bo"; "di";
+ "gd"; "mu"; "psy"; "sn";"spc"; "t"; "bg";"p";"pa";"muz";"dez";"di"; "gd"; "fl"; "me" ;"mg";
+  "mo"; "mlp"; "soc"; "fag"; "cp"; "a"; "ja"; "w"]
 
 type a = System.Json.JsonValue list
 
@@ -29,27 +31,38 @@ let get_thread board num =
         return  wc.DownloadString (System.Uri( durl ))
     }
 
-let dvach_grabber = 
+let dvach_grabber (indexed_threads:string list) = 
     let dv_threads_json = dvach_boards |> Seq.ofList |> Seq.map (fun x -> get_threads_list x) |> Async.Parallel |> Async.RunSynchronously
-    use f = System.IO.File.CreateText("c:\\data\\dvach.json")   
+   // use f = System.IO.File.CreateText("c:\\data\\dvach.json")   
     let js = snd dv_threads_json.[0] |> FsJson.parse
 
     let process_thread (board) (thread:FsJson.Json) = 
         let num = thread?posts.Array.[0].Array.[0]?num.Val
-        let thread_json = get_thread board num |> Async.RunSynchronously |> FsJson.parse
-        thread_json?thread.Array.[0].Array |> Array.map (fun (x:FsJson.Json) -> x?comment.Val)
+        let l = List.tryFind  (fun x-> x = num) indexed_threads  
+        if l.IsSome then
+            (string num, [|""|])
+        else 
+            let thread_json = get_thread board num |> Async.RunSynchronously |> FsJson.parse
+            (string num, thread_json?thread.Array.[0].Array |> Array.map (fun (x:FsJson.Json) -> string x?comment.Val))
+            //|> Array.fold (fun (acc:string) (comment:string) -> acc + comment) "") )
         
+    let each_board board board_json_raw = 
+      //  (board, "")
+        let board_json = FsJson.parse board_json_raw
+        (board, board_json?threads.Array |> Array.fold (fun acc th -> 
+                                let r = process_thread board th 
+                                let threads_text = snd r |> Array.fold (fun (acc:string) (comment:string) -> acc + comment) "" 
+                                (fst acc @ [fst r], snd acc + threads_text)) 
+             (indexed_threads, string "")
+        )
 
     let posts = 
         dv_threads_json 
-        |> Seq.collect (fun (board, board_json_raw) -> 
-            let board_json = FsJson.parse board_json_raw
-            board_json?threads.Array |> Array.map (fun th -> process_thread board th) )
-        
+        |> Seq.map (fun (board, board_json_raw) -> each_board board board_json_raw)
        // |> Seq.collect (fun board -> board?threads.Array |> Array.map process_thread )
-        |> Seq.collect (fun x -> x)
+       // |> Seq.collect (fun x -> x)
         
    
-    f.Write((sprintf "%A" (js |> FsJsonDescription.describe) ))
+    //f.Write((sprintf "%A" (js |> FsJsonDescription.describe) ))
 
     posts
