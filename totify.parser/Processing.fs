@@ -27,7 +27,7 @@ let parse_sentences_by_context indexed_threads =
         |> List.ofArray 
         |> List.map (fun s -> 
                         match (TinyNLP.Tokenizer.tokenize s) with
-                                | Some tokens when tokens.Length > 0 -> ["<S>"] @ tokens @ ["</S>"] |> List.filter (fun t -> t.Trim() <> "") 
+                                | Some tokens when tokens.Length > 0 -> ["<S>"] @ tokens @ ["</S>"] |> List.filter (fun t -> t.Trim() <> "") |> List.map (fun x-> x.ToLower())
                                 | _ -> [])    
 
     WebGrabber.dvach_grabber indexed_threads  
@@ -42,7 +42,12 @@ let models_by_context sentences (langmodel:Storage.LanguageModel) =
     |> Seq.map (fun x ->    
                     let context_key = fst (fst x)
                     if langmodel.ModelsByContexts.ContainsKey(context_key) = false then
-                        langmodel.ModelsByContexts.Add(context_key, Storage.empty_probs)
+                        langmodel.ModelsByContexts.Add(context_key,  {
+                                                    Unigrams =  new Dictionary<string, int>(); 
+                                                    Bigrams =  new Dictionary<string, int>(); 
+                                                    Trigrams =  new Dictionary<string, int>();
+                                                    Size = 0})
+                    printfn "%A %A" (fst (fst x)) (snd x)
                     (fst (fst x), List.fold (fun aсс b -> handleSentence b aсс) langmodel.ModelsByContexts.[context_key] (snd x) ))
 
 let rec shannon_visualization_bigrams (bigrams:KeyValuePair<string, int> list) (word:string) (sentence:string) (rand:System.Random) =
@@ -64,7 +69,7 @@ let rec shannon_visualization_trigrams (trigrams:KeyValuePair<string, int> list)
     else
        
         let j = rand.Next(founded.Length)
-        printfn "founded = %A, j = %A" founded.Length j
+       // printfn "founded = %A, j = %A" founded.Length j
         let picked = founded.[j]
         if picked.Key.Contains("</S>") then
             sentence + " " + bigram.Split(' ').[1]  + "</S>"
@@ -98,6 +103,7 @@ let get_stat  =
 let temporary_wrapper_parse (datetime:string) =  
     let current_model = search_2ch_model
     let sentences = parse_sentences_by_context (current_model.Indexed |> List.ofSeq)
+    //sentences |> Seq.iter (fun x -> printfn "%A %A" (fst (fst x)) (snd x))
     sentences |> Seq.iter (fun x-> (snd (fst x)) |> Seq.iter (fun y -> if current_model.Indexed.Contains(y) = false then current_model.Indexed.Add(y)) ) 
     models_by_context sentences current_model 
         |> Seq.iter (fun x -> match current_model.ModelsByContexts.ContainsKey(fst x) with
@@ -131,7 +137,7 @@ let temporary_wrapper_shannon rand =
 
         let beginsents = all_trigrams |> List.filter (fun x-> x.Key.Split(' ').[0] = "<S>")       
         let i = rand.Next(beginsents.Length)      
-        printfn "i = %A" i
+       // printfn "i = %A" i
         let tr = beginsents.[i].Key
         tr.Split(' ').[0] + " " + tr.Split(' ').[1]
 
@@ -142,30 +148,3 @@ let temporary_wrapper_shannon rand =
         {ByTrigrams = output.Replace("<S>", "").Replace("</S>","").Replace(" ,",","); ByBigrams = output2.Replace("<S>", "").Replace("</S>","").Replace(" ,",",")}
     else
         {ByTrigrams = ""; ByBigrams = ""}
-
-//    for i in [1..5] do
-//        let rand = new System.Random()
-//        shannon_visualization_trigrams all_trigrams (first_bigram rand) "" |> printfn "%A"
-
-//    let all_bigrams_dict = 
-//        models_by_context current_model |> Seq.fold (fun acc x -> TinyNLP.POST.Suffix.mergedict x.Bigrams acc) (new Dictionary<string, int>())
-//  
-//
-//    let all_bigrams =
-//        all_bigrams_dict |> Seq.filter (fun x-> x.Key <>"<S> </S>") |> Seq.sortBy (fun keyvalue -> keyvalue.Value) |> List.ofSeq |> List.rev
-//
-//    let all_trigrams = 
-//        models_by_context current_model |> Seq.fold (fun acc x -> TinyNLP.POST.Suffix.mergedict x.Trigrams acc) (new Dictionary<string, int>())
-//        |> Seq.sortBy (fun keyvalue -> keyvalue.Value) |> List.ofSeq |> List.rev
-//
-//    for i in [1..5] do
-//    shannon_visualization_bigrams all_bigrams "<S>" "" |> printfn "%A"
-//  
-//    let first_bigram =     
-//        let rand = new System.Random()
-//        let beginsents = all_trigrams |> List.filter (fun x-> x.Key.Split(' ').[0] = "<S>")     
-//        let tr = beginsents.[rand.Next(beginsents.Length)].Key
-//        tr.Split(' ').[0] + " " + tr.Split(' ').[1]
-//
-//    for i in [1..5] do
-//        shannon_visualization_trigrams all_trigrams first_bigram "" |> printfn "%A"

@@ -6,8 +6,10 @@ open System.Json
 let dvach_url = "http://2ch.so/"
 let boards_api = "/wakaba.json"
 let dvach_boards = ["s"; "pr"; "fiz"; "b"; "sex"; "app"; "g"; "dev"; "ew"; "biz"; "bo"; "di";
- "gd"; "mu"; "psy"; "sn";"spc"; "t"; "bg";"p";"pa";"muz";"dez";"di"; "gd"; "fl"; "me" ;"mg";
-  "mo"; "mlp"; "soc"; "fag"; "cp"; "a"; "ja"; "w"]
+ "gd"; "mu"; "psy"; "sn";"spc"; "t"; "bg";"p";"pa";"di"; "gd"; "fl"; "me" ;"mg";
+ "mo"; "mlp"; "soc"; "fag";"a"; "ja"; "w"]
+//let dvach_boards = ["s"; "pr"; "fiz" ]
+
 
 type a = System.Json.JsonValue list
 
@@ -48,6 +50,8 @@ let dvach_grabber (indexed_threads:string list) =
         
     let each_board board board_json_raw = 
       //  (board, "")
+        //use f = System.IO.File.CreateText("c:\\data\\" + board + ".json")   
+        //f.Write(string board_json_raw)
         let board_json = FsJson.parse board_json_raw
         (board, board_json?threads.Array |> Array.fold (fun acc th -> 
                                 let r = process_thread board th 

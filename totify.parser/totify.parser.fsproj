@@ -62,6 +62,7 @@
     <Compile Include="Extract.fs" />
     <Compile Include="WebGrabber.fs" />
     <Compile Include="Processing.fs" />
+    <Compile Include="Simularity.fs" />
     <Compile Include="Program.fs" />
     <None Include="App.config" />
   </ItemGroup>
