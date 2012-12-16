@@ -107,8 +107,8 @@ let temporary_wrapper_parse (datetime:string) =
     sentences |> Seq.iter (fun x-> (snd (fst x)) |> Seq.iter (fun y -> if current_model.Indexed.Contains(y) = false then current_model.Indexed.Add(y)) ) 
     models_by_context sentences current_model 
         |> Seq.iter (fun x -> match current_model.ModelsByContexts.ContainsKey(fst x) with
-            | true ->  current_model.ModelsByContexts.[fst x] <- snd x
-            | false -> current_model.ModelsByContexts.Add(x)
+                | true ->  current_model.ModelsByContexts.[fst x] <- snd x
+                | false -> current_model.ModelsByContexts.Add(x)
             )
     current_model.UpdatedAt <- datetime
     Kevo.Store.update<Storage.LanguageModel> (0, current_model)

@@ -12,7 +12,9 @@ let prepareText text =
             [ {Id = 1; Content = "prepareText error"; Class = TokenClass.Other; Tag = ["UNKN"]; Stem = ""} ]
         | _ -> 
             let t = Totify.Utils.tagTokens (["<S>"] @ r.Value @ ["</S>"])
-            r.Value |> List.mapi (fun i (x:string) -> { Id = i; 
+            r.Value |> List.mapi (fun i (x:string) -> 
+                {
+                Id = i; 
                 Content = x.Trim();
                 Stem = TinyNLP.Stemming.Stem x;
                 Class = TinyNLP.Tokenizer.tokenClassifier x;
@@ -24,11 +26,11 @@ let synonymFilter tokensList =
     tokensList |> List.map (fun x -> 
         { Token = x;
           Changes = [
-              { 
-                FilterName="synonyms";
-                Variants = TinyNLP.Synonymizer.getSynonyms(x.Stem) x.Tag.Head
-              }
-            ]
+            { 
+            FilterName="synonyms";
+            Variants = TinyNLP.Synonymizer.getSynonyms(x.Stem) x.Tag.Head
+            }
+          ]
         })
 
 // FILTER #2: Kill The Bad Words
