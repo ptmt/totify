@@ -48,7 +48,8 @@
     <Reference Include="System.Numerics" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MSBuild.fs" />
+    <Compile Include="BuildScenarios.fs" />
+    <None Include="test.fsx" />
     <Compile Include="Program.fs" />
     <None Include="App.config" />
   </ItemGroup>
