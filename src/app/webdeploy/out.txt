@@ -1,0 +1,209 @@
+"BuildApp"
+Building project with version: LocalBuild
+Shortened DependencyGraph for Target BuildApp:
+<== BuildApp
+<== Scan
+<== Initlog
+<== Clean
+
+The resulting target order is:
+ - Clean
+ - Initlog
+ - Scan
+ - BuildApp
+Starting Target: BuildApp (==> Scan)
+Starting Target: Scan (==> Initlog)
+Starting Target: Initlog (==> Clean)
+Starting Target: Clean 
+Deleting contents of D:\projects\\build\
+Finished Target: Clean
+Current directory: "D:\projects\totify\webdeploy"
+Finished Target: Initlog
+scanned D:\projects\totify\webdeploy\webdeploy.fsproj
+Finished Target: Scan
+Building project: .\webdeploy.fsproj
+  c:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe  .\webdeploy.fsproj /t:Build /m   /p:OutputPath="D:\projects\build" /p:Configuration="Release"
+c:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe  .\webdeploy.fsproj /t:Build /m   /p:OutputPath="D:\projects\build" /p:Configuration="Release"
+Microsoft (R) Build Engine version 4.0.30319.17929
+[Microsoft .NET Framework, version 4.0.30319.18010]
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 23.01.2013 23:02:56.
+     1>Project ".\webdeploy.fsproj" on node 1 (Build target(s)).
+     1>Project ".\webdeploy.fsproj" (1) is building "D:\projects\mario\src\mario.server.fsproj" (2) on node 1 (default targets).
+     2>Project "D:\projects\mario\src\mario.server.fsproj" (2) is building "D:\projects\kevo\src\app\kevo.core\Kevo.Core.fsproj" (3) on node 1 (default targets).
+     3>ResolveAssemblyReferences:
+         Primary reference "Newtonsoft.Json".
+     3>C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.targets(1578,5): warning MSB3245: Could not resolve this reference. Could not locate the assembly "Newtonsoft.Json". Check to make sure the assembly exists on disk. If this reference is required by your code, you may get compilation errors. [D:\projects\kevo\src\app\kevo.core\Kevo.Core.fsproj]
+                 For SearchPath "{HintPathFromItem}".
+                 Considered "..\packages\Newtonsoft.Json.4.0.8\lib\net40\Newtonsoft.Json.dll", but it didn't exist.
+                 For SearchPath "{TargetFrameworkDirectory}".
+                 Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Newtonsoft.Json.winmd", but it didn't exist.
+                 Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Newtonsoft.Json.dll", but it didn't exist.
+                 Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Newtonsoft.Json.exe", but it didn't exist.
+                 Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\Newtonsoft.Json.winmd", but it didn't exist.
+                 Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\Newtonsoft.Json.dll", but it didn't exist.
+                 Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\Newtonsoft.Json.exe", but it didn't exist.
+                 For SearchPath "{Registry:Software\Microsoft\.NETFramework,v4.5,AssemblyFoldersEx}".
+                 Considered AssemblyFoldersEx locations.
+                 For SearchPath "{AssemblyFolders}".
+                 Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.0\Newtonsoft.Json.winmd", but it didn't exist.
+                 Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.0\Newtonsoft.Json.dll", but it didn't exist.
+                 Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.0\Newtonsoft.Json.exe", but it didn't exist.
+                 Considered "C:\Program Files (x86)\Microsoft SQL Server\110\SDK\Assemblies\Newtonsoft.Json.winmd", but it didn't exist.
+                 Considered "C:\Program Files (x86)\Microsoft SQL Server\110\SDK\Assemblies\Newtonsoft.Json.dll", but it didn't exist.
+                 Considered "C:\Program Files (x86)\Microsoft SQL Server\110\SDK\Assemblies\Newtonsoft.Json.exe", but it didn't exist.
+                 Considered "C:\Program Files\IIS\Microsoft Web Deploy V3\Newtonsoft.Json.winmd", but it didn't exist.
+                 Considered "C:\Program Files\IIS\Microsoft Web Deploy V3\Newtonsoft.Json.dll", but it didn't exist.
+                 Considered "C:\Program Files\IIS\Microsoft Web Deploy V3\Newtonsoft.Json.exe", but it didn't exist.
+                 Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.5\Newtonsoft.Json.winmd", but it didn't exist.
+                 Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.5\Newtonsoft.Json.dll", but it didn't exist.
+                 Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.5\Newtonsoft.Json.exe", but it didn't exist.
+                 For SearchPath "{GAC}".
+                 Considered "Newtonsoft.Json", which was not found in the GAC.
+                 For SearchPath "{RawFileName}".
+                 Considered treating "Newtonsoft.Json" as a file name, but it didn't exist.
+                 For SearchPath "D:\projects\build\".
+                 Considered "D:\projects\build\Newtonsoft.Json.winmd", but it didn't exist.
+                 Considered "D:\projects\build\Newtonsoft.Json.dll", but it didn't exist.
+                 Considered "D:\projects\build\Newtonsoft.Json.exe", but it didn't exist.
+         Primary reference "protobuf-net".
+     3>C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.targets(1578,5): warning MSB3245: Could not resolve this reference. Could not locate the assembly "protobuf-net". Check to make sure the assembly exists on disk. If this reference is required by your code, you may get compilation errors. [D:\projects\kevo\src\app\kevo.core\Kevo.Core.fsproj]
+                 For SearchPath "{HintPathFromItem}".
+                 Considered "..\packages\protobuf-net.2.0.0.480\lib\net40\protobuf-net.dll", but it didn't exist.
+                 For SearchPath "{TargetFrameworkDirectory}".
+                 Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\protobuf-net.winmd", but it didn't exist.
+                 Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\protobuf-net.dll", but it didn't exist.
+                 Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\protobuf-net.exe", but it didn't exist.
+                 Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\protobuf-net.winmd", but it didn't exist.
+                 Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\protobuf-net.dll", but it didn't exist.
+                 Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\protobuf-net.exe", but it didn't exist.
+                 For SearchPath "{Registry:Software\Microsoft\.NETFramework,v4.5,AssemblyFoldersEx}".
+                 Considered AssemblyFoldersEx locations.
+                 For SearchPath "{AssemblyFolders}".
+                 Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.0\protobuf-net.winmd", but it didn't exist.
+                 Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.0\protobuf-net.dll", but it didn't exist.
+                 Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.0\protobuf-net.exe", but it didn't exist.
+                 Considered "C:\Program Files (x86)\Microsoft SQL Server\110\SDK\Assemblies\protobuf-net.winmd", but it didn't exist.
+                 Considered "C:\Program Files (x86)\Microsoft SQL Server\110\SDK\Assemblies\protobuf-net.dll", but it didn't exist.
+                 Considered "C:\Program Files (x86)\Microsoft SQL Server\110\SDK\Assemblies\protobuf-net.exe", but it didn't exist.
+                 Considered "C:\Program Files\IIS\Microsoft Web Deploy V3\protobuf-net.winmd", but it didn't exist.
+                 Considered "C:\Program Files\IIS\Microsoft Web Deploy V3\protobuf-net.dll", but it didn't exist.
+                 Considered "C:\Program Files\IIS\Microsoft Web Deploy V3\protobuf-net.exe", but it didn't exist.
+                 Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.5\protobuf-net.winmd", but it didn't exist.
+                 Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.5\protobuf-net.dll", but it didn't exist.
+                 Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.5\protobuf-net.exe", but it didn't exist.
+                 For SearchPath "{GAC}".
+                 Considered "protobuf-net", which was not found in the GAC.
+                 For SearchPath "{RawFileName}".
+                 Considered treating "protobuf-net" as a file name, but it didn't exist.
+                 For SearchPath "D:\projects\build\".
+                 Considered "D:\projects\build\protobuf-net.winmd", but it didn't exist.
+                 Considered "D:\projects\build\protobuf-net.dll", but it didn't exist.
+                 Considered "D:\projects\build\protobuf-net.exe", but it didn't exist.
+         AssemblyFoldersEx location: "{Registry:Software\Microsoft\.NETFramework,v4.5,AssemblyFoldersEx}"
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\IDE\ReferenceAssemblies\v4.5\
+                 C:\Program Files (x86)\Microsoft SQL Server Compact Edition\v4.0\Desktop
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\IDE\PublicAssemblies\
+                 C:\Program Files (x86)\Microsoft.NET\Primary Interop Assemblies\
+                 C:\Program Files (x86)\Reference Assemblies\Microsoft\FSharp\3.0\Runtime\v4.0\Type Providers\
+                 C:\Program Files (x86)\Reference Assemblies\Microsoft\FSharp\3.0\Runtime\v4.0\
+                 C:\Program Files (x86)\Microsoft WCF Data Services\5.0\bin\.NETFramework\
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\IDE\ReferenceAssemblies\v4.0\
+                 C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\
+                 C:\Program Files (x86)\Reference Assemblies\Microsoft\VBPowerPacks\v10.0\
+                 C:\Program Files (x86)\Microsoft SDKs\RIA Services\v1.0\Libraries\Server\
+                 C:\Program Files (x86)\Reference Assemblies\Microsoft\FSharp\3.0\Runtime\v4.0\Type Providers\
+                 C:\Program Files (x86)\Reference Assemblies\Microsoft\FSharp\3.0\Runtime\v4.0\
+                 C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET Web Pages\v2.0\Assemblies\
+                 C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET Web Pages\v1.0\Assemblies\
+                 C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET MVC 4\Assemblies\
+                 C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET MVC 3\Assemblies\
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\ReportViewer\
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\IDE\ReferenceAssemblies\v2.0\
+                 C:\Program Files (x86)\Reference Assemblies\Microsoft\VBPowerPacks\v10.0\
+                 C:\Program Files (x86)\Common Files\Microsoft Shared\MSEnv\PublicAssemblies\
+                 C:\Program Files (x86)\Microsoft Chart Controls\Assemblies
+       GenerateTargetFrameworkMonikerAttribute:
+       Skipping target "GenerateTargetFrameworkMonikerAttribute" because all output files are up-to-date with respect to the input files.
+       CoreCompile:
+         C:\Program Files (x86)\Microsoft SDKs\F#\3.0\Framework\v4.0\fsc.exe -o:obj\Release\Kevo.Core.dll --noframework --optimize+ -r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\FSharp\3.0\Runtime\v4.0\FSharp.Core.dll" -r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\mscorlib.dll" -r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Core.dll" -r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.dll" -r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Numerics.dll" -r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Runtime.Caching.dll" -r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Xml.dll" --target:library --warnaserror:76 --fullpaths --flaterrors --subsystemversion:6.00 --highentropyva+ "C:\Users\Artist\AppData\Local\Temp\.NETFramework,Version=v4.5.AssemblyAttributes.fs" AssemblyInfo.fs ProtoBuf.fs JsonNet.fs MemoryCache.fs Core.fs AppendLog.fs Store.fsi Store.fs 
+         
+     3>D:\projects\kevo\src\app\kevo.core\ProtoBuf.fs(3,6): error FS0039: The namespace or module 'ProtoBuf' is not defined [D:\projects\kevo\src\app\kevo.core\Kevo.Core.fsproj]
+         
+     3>D:\projects\kevo\src\app\kevo.core\ProtoBuf.fs(15,26): error FS0039: The namespace or module 'Serializer' is not defined [D:\projects\kevo\src\app\kevo.core\Kevo.Core.fsproj]
+         
+     3>D:\projects\kevo\src\app\kevo.core\ProtoBuf.fs(26,17): error FS0039: The namespace or module 'Serializer' is not defined [D:\projects\kevo\src\app\kevo.core\Kevo.Core.fsproj]
+         
+     3>D:\projects\kevo\src\app\kevo.core\JsonNet.fs(3,6): error FS0039: The namespace or module 'Newtonsoft' is not defined [D:\projects\kevo\src\app\kevo.core\Kevo.Core.fsproj]
+         
+     3>D:\projects\kevo\src\app\kevo.core\JsonNet.fs(14,26): error FS0039: The type 'JsonSerializer' is not defined [D:\projects\kevo\src\app\kevo.core\Kevo.Core.fsproj]
+         
+     3>D:\projects\kevo\src\app\kevo.core\JsonNet.fs(17,22): error FS0039: The type 'JsonTextWriter' is not defined [D:\projects\kevo\src\app\kevo.core\Kevo.Core.fsproj]
+         
+     3>D:\projects\kevo\src\app\kevo.core\JsonNet.fs(18,5): error FS0072: Lookup on object of indeterminate type based on information prior to this program point. A type annotation may be needed prior to this program point to constrain the type of the object. This may allow the lookup to be resolved. [D:\projects\kevo\src\app\kevo.core\Kevo.Core.fsproj]
+         
+     3>D:\projects\kevo\src\app\kevo.core\JsonNet.fs(30,13): error FS0039: The namespace or module 'JsonConvert' is not defined [D:\projects\kevo\src\app\kevo.core\Kevo.Core.fsproj]
+         
+     3>D:\projects\kevo\src\app\kevo.core\AppendLog.fs(6,6): error FS0039: The namespace or module 'Newtonsoft' is not defined [D:\projects\kevo\src\app\kevo.core\Kevo.Core.fsproj]
+         
+     3>D:\projects\kevo\src\app\kevo.core\AppendLog.fs(18,3): error FS0039: The type 'ProtoContract' is not defined [D:\projects\kevo\src\app\kevo.core\Kevo.Core.fsproj]
+         
+     3>D:\projects\kevo\src\app\kevo.core\AppendLog.fs(29,26): error FS0039: The type 'JsonSerializer' is not defined [D:\projects\kevo\src\app\kevo.core\Kevo.Core.fsproj]
+         
+     3>D:\projects\kevo\src\app\kevo.core\AppendLog.fs(31,22): error FS0039: The type 'JsonTextWriter' is not defined [D:\projects\kevo\src\app\kevo.core\Kevo.Core.fsproj]
+         
+     3>D:\projects\kevo\src\app\kevo.core\AppendLog.fs(32,5): error FS0072: Lookup on object of indeterminate type based on information prior to this program point. A type annotation may be needed prior to this program point to constrain the type of the object. This may allow the lookup to be resolved. [D:\projects\kevo\src\app\kevo.core\Kevo.Core.fsproj]
+         
+     3>D:\projects\kevo\src\app\kevo.core\AppendLog.fs(43,26): error FS0039: The namespace or module 'Serializer' is not defined [D:\projects\kevo\src\app\kevo.core\Kevo.Core.fsproj]
+         
+     3>D:\projects\kevo\src\app\kevo.core\AppendLog.fs(100,21): error FS0039: The namespace or module 'Serializer' is not defined [D:\projects\kevo\src\app\kevo.core\Kevo.Core.fsproj]
+     3>Done Building Project "D:\projects\kevo\src\app\kevo.core\Kevo.Core.fsproj" (default targets) -- FAILED.
+     2>Done Building Project "D:\projects\mario\src\mario.server.fsproj" (default targets) -- FAILED.
+     1>Done Building Project ".\webdeploy.fsproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+       ".\webdeploy.fsproj" (Build target) (1) ->
+       "D:\projects\mario\src\mario.server.fsproj" (default target) (2) ->
+       "D:\projects\kevo\src\app\kevo.core\Kevo.Core.fsproj" (default target) (3) ->
+       (ResolveAssemblyReferences target) -> 
+         C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.targets(1578,5): warning MSB3245: Could not resolve this reference. Could not locate the assembly "Newtonsoft.Json". Check to make sure the assembly exists on disk. If this reference is required by your code, you may get compilation errors. [D:\projects\kevo\src\app\kevo.core\Kevo.Core.fsproj]
+         C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.targets(1578,5): warning MSB3245: Could not resolve this reference. Could not locate the assembly "protobuf-net". Check to make sure the assembly exists on disk. If this reference is required by your code, you may get compilation errors. [D:\projects\kevo\src\app\kevo.core\Kevo.Core.fsproj]
+
+
+       ".\webdeploy.fsproj" (Build target) (1) ->
+       "D:\projects\mario\src\mario.server.fsproj" (default target) (2) ->
+       "D:\projects\kevo\src\app\kevo.core\Kevo.Core.fsproj" (default target) (3) ->
+       (CoreCompile target) -> 
+         D:\projects\kevo\src\app\kevo.core\ProtoBuf.fs(3,6): error FS0039: The namespace or module 'ProtoBuf' is not defined [D:\projects\kevo\src\app\kevo.core\Kevo.Core.fsproj]
+         D:\projects\kevo\src\app\kevo.core\ProtoBuf.fs(15,26): error FS0039: The namespace or module 'Serializer' is not defined [D:\projects\kevo\src\app\kevo.core\Kevo.Core.fsproj]
+         D:\projects\kevo\src\app\kevo.core\ProtoBuf.fs(26,17): error FS0039: The namespace or module 'Serializer' is not defined [D:\projects\kevo\src\app\kevo.core\Kevo.Core.fsproj]
+         D:\projects\kevo\src\app\kevo.core\JsonNet.fs(3,6): error FS0039: The namespace or module 'Newtonsoft' is not defined [D:\projects\kevo\src\app\kevo.core\Kevo.Core.fsproj]
+         D:\projects\kevo\src\app\kevo.core\JsonNet.fs(14,26): error FS0039: The type 'JsonSerializer' is not defined [D:\projects\kevo\src\app\kevo.core\Kevo.Core.fsproj]
+         D:\projects\kevo\src\app\kevo.core\JsonNet.fs(17,22): error FS0039: The type 'JsonTextWriter' is not defined [D:\projects\kevo\src\app\kevo.core\Kevo.Core.fsproj]
+         D:\projects\kevo\src\app\kevo.core\JsonNet.fs(18,5): error FS0072: Lookup on object of indeterminate type based on information prior to this program point. A type annotation may be needed prior to this program point to constrain the type of the object. This may allow the lookup to be resolved. [D:\projects\kevo\src\app\kevo.core\Kevo.Core.fsproj]
+         D:\projects\kevo\src\app\kevo.core\JsonNet.fs(30,13): error FS0039: The namespace or module 'JsonConvert' is not defined [D:\projects\kevo\src\app\kevo.core\Kevo.Core.fsproj]
+         D:\projects\kevo\src\app\kevo.core\AppendLog.fs(6,6): error FS0039: The namespace or module 'Newtonsoft' is not defined [D:\projects\kevo\src\app\kevo.core\Kevo.Core.fsproj]
+         D:\projects\kevo\src\app\kevo.core\AppendLog.fs(18,3): error FS0039: The type 'ProtoContract' is not defined [D:\projects\kevo\src\app\kevo.core\Kevo.Core.fsproj]
+         D:\projects\kevo\src\app\kevo.core\AppendLog.fs(29,26): error FS0039: The type 'JsonSerializer' is not defined [D:\projects\kevo\src\app\kevo.core\Kevo.Core.fsproj]
+         D:\projects\kevo\src\app\kevo.core\AppendLog.fs(31,22): error FS0039: The type 'JsonTextWriter' is not defined [D:\projects\kevo\src\app\kevo.core\Kevo.Core.fsproj]
+         D:\projects\kevo\src\app\kevo.core\AppendLog.fs(32,5): error FS0072: Lookup on object of indeterminate type based on information prior to this program point. A type annotation may be needed prior to this program point to constrain the type of the object. This may allow the lookup to be resolved. [D:\projects\kevo\src\app\kevo.core\Kevo.Core.fsproj]
+         D:\projects\kevo\src\app\kevo.core\AppendLog.fs(43,26): error FS0039: The namespace or module 'Serializer' is not defined [D:\projects\kevo\src\app\kevo.core\Kevo.Core.fsproj]
+         D:\projects\kevo\src\app\kevo.core\AppendLog.fs(100,21): error FS0039: The namespace or module 'Serializer' is not defined [D:\projects\kevo\src\app\kevo.core\Kevo.Core.fsproj]
+
+    2 Warning(s)
+    15 Error(s)
+
+Time Elapsed 00:00:00.87
+
+---------------------------------------------------------------------
+Build Time Report
+---------------------------------------------------------------------
+Target     Duration
+------     --------
+Clean      00:00:00.0013559
+Initlog    00:00:00.0007193
+Scan       00:00:00.0289613
+Total:     00:00:01.1137019
+---------------------------------------------------------------------
