@@ -1,0 +1,321 @@
+"BuildApp"
+Building project with version: LocalBuild
+Shortened DependencyGraph for Target BuildApp:
+<== BuildApp
+<== Scan
+<== Initlog
+<== Clean
+
+The resulting target order is:
+ - Clean
+ - Initlog
+ - Scan
+ - BuildApp
+Starting Target: BuildApp (==> Scan)
+Starting Target: Scan (==> Initlog)
+Starting Target: Initlog (==> Clean)
+Starting Target: Clean 
+Deleting contents of .\build\
+Finished Target: Clean
+Current directory: "D:\projects\totify"
+Finished Target: Initlog
+scanned D:\projects\totify\src\app\totify.filters\totify.filters.fsproj
+scanned D:\projects\totify\src\app\totify.parser\totify.parser.fsproj
+scanned D:\projects\totify\src\app\totify.webapp\totify.webapp.fsproj
+scanned D:\projects\totify\src\app\webdeploy\webdeploy.fsproj
+scanned D:\projects\totify\src\test\totify.tests\totify.tests.fsproj
+Finished Target: Scan
+Building project: .\src\app\totify.webapp\totify.webapp.fsproj
+  c:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe  .\src\app\totify.webapp\totify.webapp.fsproj /t:Build /m   /p:OutputPath=".\build" /p:Configuration="Release"
+c:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe  .\src\app\totify.webapp\totify.webapp.fsproj /t:Build /m   /p:OutputPath=".\build" /p:Configuration="Release"
+Microsoft (R) Build Engine version 4.0.30319.17929
+[Microsoft .NET Framework, version 4.0.30319.18010]
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 23.01.2013 23:42:57.
+     1>Project ".\src\app\totify.webapp\totify.webapp.fsproj" on node 1 (Build target(s)).
+     1>Project ".\src\app\totify.webapp\totify.webapp.fsproj" (1) is building "D:\projects\mario\src\mario.server.fsproj" (2) on node 1 (default targets).
+     2>Project "D:\projects\mario\src\mario.server.fsproj" (2) is building "D:\projects\kevo\src\app\kevo.core\Kevo.Core.fsproj" (3) on node 1 (default targets).
+     3>ResolveAssemblyReferences:
+         Primary reference "protobuf-net, Version=2.0.0.480, Culture=neutral, PublicKeyToken=257b51d87d2e4d67".
+     3>C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.targets(1578,5): warning MSB3245: Could not resolve this reference. Could not locate the assembly "protobuf-net, Version=2.0.0.480, Culture=neutral, PublicKeyToken=257b51d87d2e4d67". Check to make sure the assembly exists on disk. If this reference is required by your code, you may get compilation errors. [D:\projects\kevo\src\app\kevo.core\Kevo.Core.fsproj]
+                 For SearchPath "{TargetFrameworkDirectory}".
+                 Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\protobuf-net.winmd", but it didn't exist.
+                 Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\protobuf-net.dll", but it didn't exist.
+                 Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\protobuf-net.exe", but it didn't exist.
+                 Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\protobuf-net.winmd", but it didn't exist.
+                 Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\protobuf-net.dll", but it didn't exist.
+                 Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\protobuf-net.exe", but it didn't exist.
+                 For SearchPath "{Registry:Software\Microsoft\.NETFramework,v4.5,AssemblyFoldersEx}".
+                 Considered AssemblyFoldersEx locations.
+                 For SearchPath "{AssemblyFolders}".
+                 Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.0\protobuf-net.winmd", but it didn't exist.
+                 Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.0\protobuf-net.dll", but it didn't exist.
+                 Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.0\protobuf-net.exe", but it didn't exist.
+                 Considered "C:\Program Files (x86)\Microsoft SQL Server\110\SDK\Assemblies\protobuf-net.winmd", but it didn't exist.
+                 Considered "C:\Program Files (x86)\Microsoft SQL Server\110\SDK\Assemblies\protobuf-net.dll", but it didn't exist.
+                 Considered "C:\Program Files (x86)\Microsoft SQL Server\110\SDK\Assemblies\protobuf-net.exe", but it didn't exist.
+                 Considered "C:\Program Files\IIS\Microsoft Web Deploy V3\protobuf-net.winmd", but it didn't exist.
+                 Considered "C:\Program Files\IIS\Microsoft Web Deploy V3\protobuf-net.dll", but it didn't exist.
+                 Considered "C:\Program Files\IIS\Microsoft Web Deploy V3\protobuf-net.exe", but it didn't exist.
+                 Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.5\protobuf-net.winmd", but it didn't exist.
+                 Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.5\protobuf-net.dll", but it didn't exist.
+                 Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.5\protobuf-net.exe", but it didn't exist.
+                 For SearchPath "{GAC}".
+                 Considered "protobuf-net, Version=2.0.0.480, Culture=neutral, PublicKeyToken=257b51d87d2e4d67", which was not found in the GAC.
+                 For SearchPath "{RawFileName}".
+                 Considered treating "protobuf-net, Version=2.0.0.480, Culture=neutral, PublicKeyToken=257b51d87d2e4d67" as a file name, but it didn't exist.
+                 For SearchPath ".\build\".
+                 Considered ".\build\protobuf-net.winmd", but it didn't exist.
+                 Considered ".\build\protobuf-net.dll", but it didn't exist.
+                 Considered ".\build\protobuf-net.exe", but it didn't exist.
+         AssemblyFoldersEx location: "{Registry:Software\Microsoft\.NETFramework,v4.5,AssemblyFoldersEx}"
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\IDE\ReferenceAssemblies\v4.5\
+                 C:\Program Files (x86)\Microsoft SQL Server Compact Edition\v4.0\Desktop
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\IDE\PublicAssemblies\
+                 C:\Program Files (x86)\Microsoft.NET\Primary Interop Assemblies\
+                 C:\Program Files (x86)\Reference Assemblies\Microsoft\FSharp\3.0\Runtime\v4.0\Type Providers\
+                 C:\Program Files (x86)\Reference Assemblies\Microsoft\FSharp\3.0\Runtime\v4.0\
+                 C:\Program Files (x86)\Microsoft WCF Data Services\5.0\bin\.NETFramework\
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\IDE\ReferenceAssemblies\v4.0\
+                 C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\
+                 C:\Program Files (x86)\Reference Assemblies\Microsoft\VBPowerPacks\v10.0\
+                 C:\Program Files (x86)\Microsoft SDKs\RIA Services\v1.0\Libraries\Server\
+                 C:\Program Files (x86)\Reference Assemblies\Microsoft\FSharp\3.0\Runtime\v4.0\Type Providers\
+                 C:\Program Files (x86)\Reference Assemblies\Microsoft\FSharp\3.0\Runtime\v4.0\
+                 C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET Web Pages\v2.0\Assemblies\
+                 C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET Web Pages\v1.0\Assemblies\
+                 C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET MVC 4\Assemblies\
+                 C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET MVC 3\Assemblies\
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\ReportViewer\
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\IDE\ReferenceAssemblies\v2.0\
+                 C:\Program Files (x86)\Reference Assemblies\Microsoft\VBPowerPacks\v10.0\
+                 C:\Program Files (x86)\Common Files\Microsoft Shared\MSEnv\PublicAssemblies\
+                 C:\Program Files (x86)\Microsoft Chart Controls\Assemblies
+       GenerateTargetFrameworkMonikerAttribute:
+       Skipping target "GenerateTargetFrameworkMonikerAttribute" because all output files are up-to-date with respect to the input files.
+       CoreCompile:
+         C:\Program Files (x86)\Microsoft SDKs\F#\3.0\Framework\v4.0\fsc.exe -o:obj\Release\Kevo.Core.dll --noframework --optimize+ -r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\FSharp\3.0\Runtime\v4.0\FSharp.Core.dll" -r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\mscorlib.dll" -r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Core.dll" -r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.dll" -r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Numerics.dll" -r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Runtime.Caching.dll" -r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Xml.dll" --target:library --warnaserror:76 --fullpaths --flaterrors --subsystemversion:6.00 --highentropyva+ "C:\Users\Artist\AppData\Local\Temp\.NETFramework,Version=v4.5.AssemblyAttributes.fs" AssemblyInfo.fs ProtoBuf.fs MemoryCache.fs Core.fs AppendLog.fs Store.fsi Store.fs 
+     1>Project ".\src\app\totify.webapp\totify.webapp.fsproj" (1) is building ".\src\app\totify.parser\totify.parser.fsproj" (4) on node 3 (default targets).
+     4>Project ".\src\app\totify.parser\totify.parser.fsproj" (4) is building "D:\projects\tinynlp.fs\src\app\postagger\postagger.fsproj" (6) on node 3 (default targets).
+     6>ResolveAssemblyReferences:
+         Primary reference "Kevo.Core".
+     6>C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.targets(1578,5): warning MSB3245: Could not resolve this reference. Could not locate the assembly "Kevo.Core". Check to make sure the assembly exists on disk. If this reference is required by your code, you may get compilation errors. [D:\projects\tinynlp.fs\src\app\postagger\postagger.fsproj]
+                 For SearchPath "{HintPathFromItem}".
+                 Considered "..\..\kevo\Kevo.Core\bin\Debug\Kevo.Core.dll", but it didn't exist.
+                 For SearchPath "{TargetFrameworkDirectory}".
+                 Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Kevo.Core.winmd", but it didn't exist.
+                 Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Kevo.Core.dll", but it didn't exist.
+                 Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Kevo.Core.exe", but it didn't exist.
+                 Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\Kevo.Core.winmd", but it didn't exist.
+                 Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\Kevo.Core.dll", but it didn't exist.
+                 Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\Kevo.Core.exe", but it didn't exist.
+                 For SearchPath "{Registry:Software\Microsoft\.NETFramework,v4.5,AssemblyFoldersEx}".
+                 Considered AssemblyFoldersEx locations.
+                 For SearchPath "{AssemblyFolders}".
+                 Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.0\Kevo.Core.winmd", but it didn't exist.
+                 Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.0\Kevo.Core.dll", but it didn't exist.
+                 Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.0\Kevo.Core.exe", but it didn't exist.
+                 Considered "C:\Program Files (x86)\Microsoft SQL Server\110\SDK\Assemblies\Kevo.Core.winmd", but it didn't exist.
+                 Considered "C:\Program Files (x86)\Microsoft SQL Server\110\SDK\Assemblies\Kevo.Core.dll", but it didn't exist.
+                 Considered "C:\Program Files (x86)\Microsoft SQL Server\110\SDK\Assemblies\Kevo.Core.exe", but it didn't exist.
+                 Considered "C:\Program Files\IIS\Microsoft Web Deploy V3\Kevo.Core.winmd", but it didn't exist.
+                 Considered "C:\Program Files\IIS\Microsoft Web Deploy V3\Kevo.Core.dll", but it didn't exist.
+                 Considered "C:\Program Files\IIS\Microsoft Web Deploy V3\Kevo.Core.exe", but it didn't exist.
+                 Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.5\Kevo.Core.winmd", but it didn't exist.
+                 Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.5\Kevo.Core.dll", but it didn't exist.
+                 Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.5\Kevo.Core.exe", but it didn't exist.
+                 For SearchPath "{GAC}".
+                 Considered "Kevo.Core", which was not found in the GAC.
+                 For SearchPath "{RawFileName}".
+                 Considered treating "Kevo.Core" as a file name, but it didn't exist.
+                 For SearchPath ".\build\".
+                 Considered ".\build\Kevo.Core.winmd", but it didn't exist.
+                 Considered ".\build\Kevo.Core.dll", but it didn't exist.
+                 Considered ".\build\Kevo.Core.exe", but it didn't exist.
+         AssemblyFoldersEx location: "{Registry:Software\Microsoft\.NETFramework,v4.5,AssemblyFoldersEx}"
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\IDE\ReferenceAssemblies\v4.5\
+                 C:\Program Files (x86)\Microsoft SQL Server Compact Edition\v4.0\Desktop
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\IDE\PublicAssemblies\
+                 C:\Program Files (x86)\Microsoft.NET\Primary Interop Assemblies\
+                 C:\Program Files (x86)\Reference Assemblies\Microsoft\FSharp\3.0\Runtime\v4.0\Type Providers\
+                 C:\Program Files (x86)\Reference Assemblies\Microsoft\FSharp\3.0\Runtime\v4.0\
+                 C:\Program Files (x86)\Microsoft WCF Data Services\5.0\bin\.NETFramework\
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\IDE\ReferenceAssemblies\v4.0\
+                 C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\
+                 C:\Program Files (x86)\Reference Assemblies\Microsoft\VBPowerPacks\v10.0\
+                 C:\Program Files (x86)\Microsoft SDKs\RIA Services\v1.0\Libraries\Server\
+                 C:\Program Files (x86)\Reference Assemblies\Microsoft\FSharp\3.0\Runtime\v4.0\Type Providers\
+                 C:\Program Files (x86)\Reference Assemblies\Microsoft\FSharp\3.0\Runtime\v4.0\
+                 C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET Web Pages\v2.0\Assemblies\
+                 C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET Web Pages\v1.0\Assemblies\
+                 C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET MVC 4\Assemblies\
+                 C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET MVC 3\Assemblies\
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\ReportViewer\
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\IDE\ReferenceAssemblies\v2.0\
+                 C:\Program Files (x86)\Reference Assemblies\Microsoft\VBPowerPacks\v10.0\
+                 C:\Program Files (x86)\Common Files\Microsoft Shared\MSEnv\PublicAssemblies\
+                 C:\Program Files (x86)\Microsoft Chart Controls\Assemblies
+       GenerateTargetFrameworkMonikerAttribute:
+       Skipping target "GenerateTargetFrameworkMonikerAttribute" because all output files are up-to-date with respect to the input files.
+       CoreCompile:
+         C:\Program Files (x86)\Microsoft SDKs\F#\3.0\Framework\v4.0\fsc.exe -o:obj\Release\postagger.dll --debug:pdbonly --noframework --define:TRACE --doc:bin\Release\postagger.XML --optimize+ -r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\FSharp\3.0\Runtime\v4.0\FSharp.Core.dll" -r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\mscorlib.dll" -r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Core.dll" -r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.dll" -r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Numerics.dll" -r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Runtime.Caching.dll" -r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Xml.dll" -r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Xml.Linq.dll" --target:library --warn:3 --warnaserror:76 --fullpaths --flaterrors --subsystemversion:6.00 --highentropyva+ "C:\Users\Artist\AppData\Local\Temp\.NETFramework,Version=v4.5.AssemblyAttributes.fs" Util.fs Corpus.fs Model.fs Suffix.fs Word.fs Tagger.fs 
+     4>Project ".\src\app\totify.parser\totify.parser.fsproj" (4) is building "D:\projects\tinynlp.fs\src\app\tinynlp.fsproj" (7) on node 4 (default targets).
+     7>ResolveAssemblyReferences:
+         Primary reference "Kevo.Core".
+     7>C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.targets(1578,5): warning MSB3245: Could not resolve this reference. Could not locate the assembly "Kevo.Core". Check to make sure the assembly exists on disk. If this reference is required by your code, you may get compilation errors. [D:\projects\tinynlp.fs\src\app\tinynlp.fsproj]
+                 For SearchPath "{TargetFrameworkDirectory}".
+                 Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Kevo.Core.winmd", but it didn't exist.
+                 Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Kevo.Core.dll", but it didn't exist.
+                 Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Kevo.Core.exe", but it didn't exist.
+                 Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\Kevo.Core.winmd", but it didn't exist.
+                 Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\Kevo.Core.dll", but it didn't exist.
+                 Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\Kevo.Core.exe", but it didn't exist.
+                 For SearchPath "{Registry:Software\Microsoft\.NETFramework,v4.5,AssemblyFoldersEx}".
+                 Considered AssemblyFoldersEx locations.
+                 For SearchPath "{AssemblyFolders}".
+                 Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.0\Kevo.Core.winmd", but it didn't exist.
+                 Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.0\Kevo.Core.dll", but it didn't exist.
+                 Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.0\Kevo.Core.exe", but it didn't exist.
+                 Considered "C:\Program Files (x86)\Microsoft SQL Server\110\SDK\Assemblies\Kevo.Core.winmd", but it didn't exist.
+                 Considered "C:\Program Files (x86)\Microsoft SQL Server\110\SDK\Assemblies\Kevo.Core.dll", but it didn't exist.
+                 Considered "C:\Program Files (x86)\Microsoft SQL Server\110\SDK\Assemblies\Kevo.Core.exe", but it didn't exist.
+                 Considered "C:\Program Files\IIS\Microsoft Web Deploy V3\Kevo.Core.winmd", but it didn't exist.
+                 Considered "C:\Program Files\IIS\Microsoft Web Deploy V3\Kevo.Core.dll", but it didn't exist.
+                 Considered "C:\Program Files\IIS\Microsoft Web Deploy V3\Kevo.Core.exe", but it didn't exist.
+                 Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.5\Kevo.Core.winmd", but it didn't exist.
+                 Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.5\Kevo.Core.dll", but it didn't exist.
+                 Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.5\Kevo.Core.exe", but it didn't exist.
+                 For SearchPath "{GAC}".
+                 Considered "Kevo.Core", which was not found in the GAC.
+                 For SearchPath "{RawFileName}".
+                 Considered treating "Kevo.Core" as a file name, but it didn't exist.
+                 For SearchPath ".\build\".
+                 Considered ".\build\Kevo.Core.winmd", but it didn't exist.
+                 Considered ".\build\Kevo.Core.dll", but it didn't exist.
+                 Considered ".\build\Kevo.Core.exe", but it didn't exist.
+         There was a conflict between "Kevo.Core, Version=0.2.0.0, Culture=neutral, PublicKeyToken=null" and "Kevo.Core".
+     7>C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.targets(1578,5): warning MSB3243: No way to resolve conflict between "Kevo.Core, Version=0.2.0.0, Culture=neutral, PublicKeyToken=null" and "Kevo.Core". Choosing "Kevo.Core, Version=0.2.0.0, Culture=neutral, PublicKeyToken=null" arbitrarily. [D:\projects\tinynlp.fs\src\app\tinynlp.fsproj]
+         AssemblyFoldersEx location: "{Registry:Software\Microsoft\.NETFramework,v4.5,AssemblyFoldersEx}"
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\IDE\ReferenceAssemblies\v4.5\
+                 C:\Program Files (x86)\Microsoft SQL Server Compact Edition\v4.0\Desktop
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\IDE\PublicAssemblies\
+                 C:\Program Files (x86)\Microsoft.NET\Primary Interop Assemblies\
+                 C:\Program Files (x86)\Reference Assemblies\Microsoft\FSharp\3.0\Runtime\v4.0\Type Providers\
+                 C:\Program Files (x86)\Reference Assemblies\Microsoft\FSharp\3.0\Runtime\v4.0\
+                 C:\Program Files (x86)\Microsoft WCF Data Services\5.0\bin\.NETFramework\
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\IDE\ReferenceAssemblies\v4.0\
+                 C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\
+                 C:\Program Files (x86)\Reference Assemblies\Microsoft\VBPowerPacks\v10.0\
+                 C:\Program Files (x86)\Microsoft SDKs\RIA Services\v1.0\Libraries\Server\
+                 C:\Program Files (x86)\Reference Assemblies\Microsoft\FSharp\3.0\Runtime\v4.0\Type Providers\
+                 C:\Program Files (x86)\Reference Assemblies\Microsoft\FSharp\3.0\Runtime\v4.0\
+                 C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET Web Pages\v2.0\Assemblies\
+                 C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET Web Pages\v1.0\Assemblies\
+                 C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET MVC 4\Assemblies\
+                 C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET MVC 3\Assemblies\
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\ReportViewer\
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\IDE\ReferenceAssemblies\v2.0\
+                 C:\Program Files (x86)\Reference Assemblies\Microsoft\VBPowerPacks\v10.0\
+                 C:\Program Files (x86)\Common Files\Microsoft Shared\MSEnv\PublicAssemblies\
+                 C:\Program Files (x86)\Microsoft Chart Controls\Assemblies
+       GenerateTargetFrameworkMonikerAttribute:
+       Skipping target "GenerateTargetFrameworkMonikerAttribute" because all output files are up-to-date with respect to the input files.
+       CoreCompile:
+         C:\Program Files (x86)\Microsoft SDKs\F#\3.0\Framework\v4.0\fsc.exe -o:obj\Release\TinyNLP.fs.dll --debug:pdbonly --noframework --define:TRACE --doc:bin\Release\TinyNLP.fs.XML --optimize+ -r:D:\projects\tinynlp.fs\lib\FParsec.dll -r:D:\projects\tinynlp.fs\lib\FParsecCS.dll -r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\FSharp\3.0\Runtime\v4.0\FSharp.Core.dll" -r:D:\projects\kevo\src\app\kevo.core\bin\Debug\Kevo.Core.dll -r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\mscorlib.dll" -r:D:\projects\kevo\src\app\kevo.core\bin\Debug\protobuf-net.dll -r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Core.dll" -r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.dll" -r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Numerics.dll" --target:library --warn:3 --warnaserror:76 --fullpaths --flaterrors --subsystemversion:6.00 --highentropyva+ "C:\Users\Artist\AppData\Local\Temp\.NETFramework,Version=v4.5.AssemblyAttributes.fs" Tokenizer.fs Stemming.fs Synonymizer.fs 
+     6>CoreCompile:
+         
+     6>D:\projects\tinynlp.fs\src\app\postagger\Util.fs(4,6): error FS0039: The namespace or module 'Kevo' is not defined [D:\projects\tinynlp.fs\src\app\postagger\postagger.fsproj]
+     3>CoreCompile:
+         
+     3>D:\projects\kevo\src\app\kevo.core\ProtoBuf.fs(3,6): error FS0039: The namespace or module 'ProtoBuf' is not defined [D:\projects\kevo\src\app\kevo.core\Kevo.Core.fsproj]
+         
+     3>D:\projects\kevo\src\app\kevo.core\ProtoBuf.fs(15,26): error FS0039: The namespace or module 'Serializer' is not defined [D:\projects\kevo\src\app\kevo.core\Kevo.Core.fsproj]
+         
+     3>D:\projects\kevo\src\app\kevo.core\ProtoBuf.fs(26,17): error FS0039: The namespace or module 'Serializer' is not defined [D:\projects\kevo\src\app\kevo.core\Kevo.Core.fsproj]
+         
+     3>D:\projects\kevo\src\app\kevo.core\AppendLog.fs(18,3): error FS0039: The type 'ProtoContract' is not defined [D:\projects\kevo\src\app\kevo.core\Kevo.Core.fsproj]
+         
+     3>D:\projects\kevo\src\app\kevo.core\AppendLog.fs(33,26): error FS0039: The namespace or module 'Serializer' is not defined [D:\projects\kevo\src\app\kevo.core\Kevo.Core.fsproj]
+     6>CoreCompile:
+         
+     6>D:\projects\tinynlp.fs\src\app\postagger\Model.fs(75,37): error FS0039: The namespace or module 'Kevo' is not defined [D:\projects\tinynlp.fs\src\app\postagger\postagger.fsproj]
+     3>CoreCompile:
+         
+     3>D:\projects\kevo\src\app\kevo.core\AppendLog.fs(90,21): error FS0039: The namespace or module 'Serializer' is not defined [D:\projects\kevo\src\app\kevo.core\Kevo.Core.fsproj]
+     6>Done Building Project "D:\projects\tinynlp.fs\src\app\postagger\postagger.fsproj" (default targets) -- FAILED.
+     3>Done Building Project "D:\projects\kevo\src\app\kevo.core\Kevo.Core.fsproj" (default targets) -- FAILED.
+     2>Done Building Project "D:\projects\mario\src\mario.server.fsproj" (default targets) -- FAILED.
+     7>_CopyFilesMarkedCopyLocal:
+         Copying file from "D:\projects\tinynlp.fs\lib\FParsec.dll" to ".\build\FParsec.dll".
+         Copying file from "D:\projects\tinynlp.fs\lib\FParsecCS.dll" to ".\build\FParsecCS.dll".
+         Copying file from "C:\Program Files (x86)\Reference Assemblies\Microsoft\FSharp\3.0\Runtime\v4.0\FSharp.Core.dll" to ".\build\FSharp.Core.dll".
+         Copying file from "D:\projects\kevo\src\app\kevo.core\bin\Debug\Kevo.Core.dll" to ".\build\Kevo.Core.dll".
+         Copying file from "D:\projects\kevo\src\app\kevo.core\bin\Debug\protobuf-net.dll" to ".\build\protobuf-net.dll".
+         Copying file from "D:\projects\kevo\src\app\kevo.core\bin\Debug\Kevo.Core.pdb" to ".\build\Kevo.Core.pdb".
+         Copying file from "D:\projects\kevo\src\app\kevo.core\bin\Debug\Kevo.Core.xml" to ".\build\Kevo.Core.xml".
+         Copying file from "C:\Program Files (x86)\Reference Assemblies\Microsoft\FSharp\3.0\Runtime\v4.0\FSharp.Core.xml" to ".\build\FSharp.Core.xml".
+       CopyFilesToOutputDirectory:
+         Copying file from "obj\Release\TinyNLP.fs.dll" to ".\build\TinyNLP.fs.dll".
+         tinynlp -> .\build\TinyNLP.fs.dll
+         Copying file from "obj\Release\TinyNLP.fs.pdb" to ".\build\TinyNLP.fs.pdb".
+         Copying file from "bin\Release\TinyNLP.fs.XML" to ".\build\TinyNLP.fs.XML".
+     7>Done Building Project "D:\projects\tinynlp.fs\src\app\tinynlp.fsproj" (default targets).
+     4>Done Building Project ".\src\app\totify.parser\totify.parser.fsproj" (default targets) -- FAILED.
+     1>Done Building Project ".\src\app\totify.webapp\totify.webapp.fsproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+       ".\src\app\totify.webapp\totify.webapp.fsproj" (Build target) (1) ->
+       "D:\projects\mario\src\mario.server.fsproj" (default target) (2) ->
+       "D:\projects\kevo\src\app\kevo.core\Kevo.Core.fsproj" (default target) (3) ->
+       (ResolveAssemblyReferences target) -> 
+         C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.targets(1578,5): warning MSB3245: Could not resolve this reference. Could not locate the assembly "protobuf-net, Version=2.0.0.480, Culture=neutral, PublicKeyToken=257b51d87d2e4d67". Check to make sure the assembly exists on disk. If this reference is required by your code, you may get compilation errors. [D:\projects\kevo\src\app\kevo.core\Kevo.Core.fsproj]
+
+
+       ".\src\app\totify.webapp\totify.webapp.fsproj" (Build target) (1) ->
+       ".\src\app\totify.parser\totify.parser.fsproj" (default target) (4) ->
+       "D:\projects\tinynlp.fs\src\app\postagger\postagger.fsproj" (default target) (6) ->
+         C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.targets(1578,5): warning MSB3245: Could not resolve this reference. Could not locate the assembly "Kevo.Core". Check to make sure the assembly exists on disk. If this reference is required by your code, you may get compilation errors. [D:\projects\tinynlp.fs\src\app\postagger\postagger.fsproj]
+
+
+       ".\src\app\totify.webapp\totify.webapp.fsproj" (Build target) (1) ->
+       ".\src\app\totify.parser\totify.parser.fsproj" (default target) (4) ->
+       "D:\projects\tinynlp.fs\src\app\tinynlp.fsproj" (default target) (7) ->
+         C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.targets(1578,5): warning MSB3245: Could not resolve this reference. Could not locate the assembly "Kevo.Core". Check to make sure the assembly exists on disk. If this reference is required by your code, you may get compilation errors. [D:\projects\tinynlp.fs\src\app\tinynlp.fsproj]
+         C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.targets(1578,5): warning MSB3243: No way to resolve conflict between "Kevo.Core, Version=0.2.0.0, Culture=neutral, PublicKeyToken=null" and "Kevo.Core". Choosing "Kevo.Core, Version=0.2.0.0, Culture=neutral, PublicKeyToken=null" arbitrarily. [D:\projects\tinynlp.fs\src\app\tinynlp.fsproj]
+
+
+       ".\src\app\totify.webapp\totify.webapp.fsproj" (Build target) (1) ->
+       ".\src\app\totify.parser\totify.parser.fsproj" (default target) (4) ->
+       "D:\projects\tinynlp.fs\src\app\postagger\postagger.fsproj" (default target) (6) ->
+       (CoreCompile target) -> 
+         D:\projects\tinynlp.fs\src\app\postagger\Util.fs(4,6): error FS0039: The namespace or module 'Kevo' is not defined [D:\projects\tinynlp.fs\src\app\postagger\postagger.fsproj]
+         D:\projects\tinynlp.fs\src\app\postagger\Model.fs(75,37): error FS0039: The namespace or module 'Kevo' is not defined [D:\projects\tinynlp.fs\src\app\postagger\postagger.fsproj]
+
+
+       ".\src\app\totify.webapp\totify.webapp.fsproj" (Build target) (1) ->
+       "D:\projects\mario\src\mario.server.fsproj" (default target) (2) ->
+       "D:\projects\kevo\src\app\kevo.core\Kevo.Core.fsproj" (default target) (3) ->
+         D:\projects\kevo\src\app\kevo.core\ProtoBuf.fs(3,6): error FS0039: The namespace or module 'ProtoBuf' is not defined [D:\projects\kevo\src\app\kevo.core\Kevo.Core.fsproj]
+         D:\projects\kevo\src\app\kevo.core\ProtoBuf.fs(15,26): error FS0039: The namespace or module 'Serializer' is not defined [D:\projects\kevo\src\app\kevo.core\Kevo.Core.fsproj]
+         D:\projects\kevo\src\app\kevo.core\ProtoBuf.fs(26,17): error FS0039: The namespace or module 'Serializer' is not defined [D:\projects\kevo\src\app\kevo.core\Kevo.Core.fsproj]
+         D:\projects\kevo\src\app\kevo.core\AppendLog.fs(18,3): error FS0039: The type 'ProtoContract' is not defined [D:\projects\kevo\src\app\kevo.core\Kevo.Core.fsproj]
+         D:\projects\kevo\src\app\kevo.core\AppendLog.fs(33,26): error FS0039: The namespace or module 'Serializer' is not defined [D:\projects\kevo\src\app\kevo.core\Kevo.Core.fsproj]
+         D:\projects\kevo\src\app\kevo.core\AppendLog.fs(90,21): error FS0039: The namespace or module 'Serializer' is not defined [D:\projects\kevo\src\app\kevo.core\Kevo.Core.fsproj]
+
+    4 Warning(s)
+    8 Error(s)
+
+Time Elapsed 00:00:01.07
+
+---------------------------------------------------------------------
+Build Time Report
+---------------------------------------------------------------------
+Target     Duration
+------     --------
+Clean      00:00:00.0075864
+Initlog    00:00:00.0006602
+Scan       00:00:00.1409782
+Total:     00:00:01.5178170
+---------------------------------------------------------------------

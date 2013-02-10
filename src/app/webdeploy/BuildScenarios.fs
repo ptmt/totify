@@ -7,7 +7,6 @@ module Totify.WebDeploy
 
 // include Fake libs
 
-open Fake
 open System
 
 let test_build =    

@@ -25,12 +25,7 @@ let prepareText text =
 let synonymFilter tokensList = 
     tokensList |> List.map (fun x -> 
         { Token = x;
-          Changes = [
-            { 
-            FilterName="synonyms";
-            Variants = TinyNLP.Synonymizer.getSynonyms(x.Stem) x.Tag.Head
-            }
-          ]
+          Changes = [ { FilterName="synonyms"; Variants = TinyNLP.Synonymizer.getSynonyms(x.Stem) x.Tag.Head } ]
         })
 
 // FILTER #2: Kill The Bad Words
