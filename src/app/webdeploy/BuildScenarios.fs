@@ -1,15 +1,8 @@
-﻿#if INTERACTIVE
-#time
-#I @"D:\projects\totify\packages\FAKE.1.64.18.0\tools\"
-#r "FakeLib.dll"
-#endif
-module Totify.WebDeploy
-
-// include Fake libs
+﻿module Totify.WebDeploy
 
 open System
 
-let test_build =    
+let totify_build =    
     let startInfo = new System.Diagnostics.ProcessStartInfo();
     startInfo.FileName <- @"D:\projects\totify\tools\FAKE\Fake.exe"
     startInfo.Arguments <- @"D:\projects\totify\build.fsx"

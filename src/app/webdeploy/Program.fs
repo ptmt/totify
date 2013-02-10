@@ -8,9 +8,8 @@ open Mario.WebServer
 
 let myHandler (req:HttpRequest) : HttpResponse =
     match req.Uri with 
-        | "/test.fs" -> 
-            
-            { Json = Totify.WebDeploy.test_build  }     
+        | "/build.fs" ->             
+            { Json = Totify.WebDeploy.totify_build  }             
         | _ -> Mario.HttpUtility.badRequest
     
 
