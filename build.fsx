@@ -1,4 +1,4 @@
-#I @"D:\projects\totify\packages\FAKE.1.64.18.0\tools\"
+#I @"tools\FAKE"
 #r "FakeLib.dll"
 
 
@@ -9,7 +9,7 @@ open System
 
 
 // Properties
-let baseDir = @"D:\projects\totify"
+let baseDir = System.IO.Directory.GetCurrentDirectory() //@"D:\projects\totify"
 let buildDir = baseDir + @"\build\"
 let appReferences = !+ (baseDir + @"\**\*.fsproj") 
  
@@ -17,12 +17,20 @@ let appReferences = !+ (baseDir + @"\**\*.fsproj")
 // Targets
 Target "Clean" (fun _ ->
     CleanDir buildDir
-   
+    CreateDir buildDir + @"sources\"
 )
 
 Target "Initlog" (fun _ -> 
     printfn "Current directory: %A" (System.IO.Directory.GetCurrentDirectory())
     
+)
+
+Target "PullSources" (fun _ -> 
+    let t = System.IO.Directory.GetCurrentDirectory()
+    let cloneRepository name = 
+        Fake.Git.Repository.clone t ("https://github.com/unknownexception/" + name + ".git") (buildDir + @"sources\" + name)
+    ["totify"; "mario"; "kevo"] |> Seq.iter (fun x -> cloneRepository x)
+
 )
 
 Target "Scan" (fun _ -> 
@@ -38,6 +46,7 @@ Target "BuildApp" (fun _ ->
 // Dependencies
 "Clean"
     ==> "Initlog"
+    ==> "PullSources"
     ==> "Scan"
     ==> "BuildApp" 
 
