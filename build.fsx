@@ -10,14 +10,15 @@ open System
 
 // Properties
 let baseDir = System.IO.Directory.GetCurrentDirectory() //@"D:\projects\totify"
-let buildDir = baseDir + @"\build\"
-let appReferences = !+ (baseDir + @"\**\*.fsproj") 
+let buildDir = baseDir + @"/build/"
+let sourcesDir = buildDir + @"sources/"
+let appReferences = !+ (baseDir + @"/**/*.fsproj") 
  
 
 // Targets
 Target "Clean" (fun _ ->
     CleanDir buildDir
-    CreateDir buildDir + @"sources\"
+    CreateDir sourcesDir
 )
 
 Target "Initlog" (fun _ -> 
@@ -28,7 +29,7 @@ Target "Initlog" (fun _ ->
 Target "PullSources" (fun _ -> 
     let t = System.IO.Directory.GetCurrentDirectory()
     let cloneRepository name = 
-        Fake.Git.Repository.clone t ("https://github.com/unknownexception/" + name + ".git") (buildDir + @"sources\" + name)
+        Fake.Git.Repository.clone t ("https://github.com/unknownexception/" + name + ".git") (sourcesDir + name)
     ["totify"; "mario"; "kevo"] |> Seq.iter (fun x -> cloneRepository x)
 
 )
