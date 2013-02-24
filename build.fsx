@@ -1,5 +1,7 @@
-#I @"tools/FAKE"
-#r "FakeLib.dll"
+//#I @"tools/FAKE"
+//#I @"tools\FAKE"
+#r "tools\FAKE\FakeLib.dll"
+#r "tools/FAKE/FakeLib.dll"
 
 
 // include Fake libs
@@ -9,11 +11,12 @@ open System
 
 
 // Properties
+let separatorPath = System.IO.Path.DirectorySeparatorChar.ToString()
 let baseDir = System.IO.Directory.GetCurrentDirectory() //@"D:\projects\totify"
-let buildDir = baseDir + @"/build/"
-let sourcesDir = buildDir + @"sources/"
+let buildDir = baseDir + separatorPath + "build" + separatorPath
+let sourcesDir = buildDir + "sources" + separatorPath
 let appReferences = !+ (baseDir + @"/**/*.fsproj") 
- 
+
 
 // Targets
 Target "Clean" (fun _ ->
