@@ -1,4 +1,4 @@
-#I @"tools\FAKE"
+#I @"tools/FAKE"
 #r "FakeLib.dll"
 
 
